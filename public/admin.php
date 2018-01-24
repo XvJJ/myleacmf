@@ -9,6 +9,8 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+
+
 // 绑定admin模块
 define('BIND_MODULE', 'admin');
 define('APP_DEV', false);
