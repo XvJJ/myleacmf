@@ -13,6 +13,6 @@ class IndexController
 
     public function index()
     {
-        exit('ok!zzzzzz');
+        exit('ok!');
     }
 }
