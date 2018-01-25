@@ -1,7 +1,6 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\model\Meeting;
 use think\Db;
 
 class MeetingController extends CommonController
@@ -32,13 +31,33 @@ class MeetingController extends CommonController
     }
 
     /***
-    *   添加页面和添加操作 
-    *   @return mixed
-    */
+     *   添加页面和添加操作
+     *   @return mixed
+     */
     public function add()
+    {
+        if ($this->request->isPost()) {
+            $Meeting         = new Meeting();
+            $post            = $this->request->post();
+            $post['content'] = $_POST['content'];
+            if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
+                $this->error($Article->getError());
+            }
+            $this->success('新增成功', url('index'));
+        } else {
+            return view('edit');
+        }
+    }
+
+    public function edit()
     {
         if ($this->request->isPost()) {
             # code...
         }
+    }
+
+    public function del()
+    {
+
     }
 }

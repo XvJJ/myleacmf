@@ -10,4 +10,19 @@ class Meeting extends Model
  * @var bool
  */
     protected $autoWriteTimestamp = true;
+
+    /**
+     * 自动完成
+     * @array
+     */
+    protected $insert = ['create_aid'];
+
+    /**
+     * 设置操作人
+     * @return mixed
+     */
+    protected function setCreateAidAttr()
+    {
+        return session('admin.id');
+    }
 }
