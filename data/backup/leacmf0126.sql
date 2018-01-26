@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 26/01/2018 16:13:02
+ Date: 26/01/2018 10:56:12
 */
 
 SET NAMES utf8mb4;
@@ -64,7 +64,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '7af81f5eb58cbda5884a8b6480d8f131', 687, 1516952602, '127.0.0.1', 1, 1);
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '0751f9cefc4e91ad25ec6de93961c239', 686, 1516881448, '127.0.0.1', 1, 1);
 INSERT INTO `admin` VALUES (2, 'manage', '管理员', 'd3e3aad7256f373a52a9cfb99bb54c98', 0, '9c1f396f25668e2b2322936c7e02e603', 47, 1504764750, '1.25.227.160', 1, 1496306374);
 
 -- ----------------------------
@@ -288,10 +288,10 @@ CREATE TABLE `meeting`  (
   `room` int(11) NOT NULL DEFAULT 0 COMMENT '会议室编号',
   `start_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
   `takeup_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '占用时间',
-  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
+  `remark` varchar(140) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
-  `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
+  `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
 
@@ -313,20 +313,6 @@ CREATE TABLE `msg`  (
 -- Records of msg
 -- ----------------------------
 INSERT INTO `msg` VALUES (1, 0, 'test', '', 1507692726, 0);
-
--- ----------------------------
--- Table structure for room
--- ----------------------------
-DROP TABLE IF EXISTS `room`;
-CREATE TABLE `room`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `create_aid` int(11) UNSIGNED DEFAULT 0 COMMENT '创建人',
-  `name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议室名称',
-  `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT '会议室地址',
-  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
-  `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-禁用 1-启用 2-删除',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for setting

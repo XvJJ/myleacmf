@@ -41,7 +41,7 @@ class MeetingController extends CommonController
             $post            = $this->request->post();
             $post['content'] = $_POST['content'];
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
-                $this->error($Article->getError());
+                $this->error($Meeting->getError());
             }
             $this->success('新增成功', url('index'));
         } else {

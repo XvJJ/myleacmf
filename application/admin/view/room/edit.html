@@ -1,0 +1,41 @@
+<extend name="public/base" />
+<block name="body">
+    <div class="box-body">
+        <form class="layui-form" action="{:url()}" method="post" id="goods-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">会议室名称</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" placeholder="" lay-verify="required" value="{$info.name|default=''}" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">会议室地址</label>
+                <div class="layui-input-block">
+                    <input type="text" name="address" placeholder="" lay-verify="required" value="{$info.address|default=''}" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注</label>
+                <div class="layui-input-block">
+                    <!-- <input type="text" name="title" placeholder="" lay-verify="required" value="{$info.remark|default=''}" class="layui-input"> -->
+                    <textarea name="remark" id="remark" cols="30" rows="5" placeholder="" lay-verify="" value="{$info.remark|default=''}" class="layui-textarea"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">状态</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="status" value="1" title="启用" <php>if(!isset($info)||$info['status']==1):echo 'checked';endif</php>>
+                    <input type="radio" name="status" value="0" title="关闭" <php>if(isset($info)&&$info['status']==0):echo 'checked';endif</php>>
+                </div>
+            </div>
+            <input type="hidden" name="id" value="{$info.id|default=''}">
+            <input type="hidden" name="cate_id" value="{$info.create_aid|default='1'}">
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="btn btn-primary" lay-submit lay-filter="layform1" target="1"><i class="fa fa-save"></i> 保存</button>
+                    <button type="reset" class="btn btn-default" style="margin-left: 20px;">重置</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</block>

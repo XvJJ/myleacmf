@@ -1,21 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lea
- * Date: 2017/10/10
- * Time: 14:28
- */
-
 namespace app\admin\validate;
-
 
 use think\Validate;
 
 class Meeting extends Validate
 {
     protected $rule = [
-        'title|标题'  => 'require|max:64',
-        'status|状态' => 'require|in:0,1',
+        'title|会议标题'       => 'require|max:64',
+        'start_time|开始时间'  => 'require',
+        'takeup_time|占用时间' => 'require',
+        'remark|备注'        => 'max:200',
+        'status|状态'        => 'require|in:0,1',
     ];
-
 }
