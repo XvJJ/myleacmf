@@ -6,23 +6,34 @@ use think\Db;
 
 class RoomController extends CommonController
 {
-    public function _initialize()
-    {
-        parent::_initialize();
-    }
+    // public function _initialize()
+    // {
+    //     parent::_initialize();
+    // }
 
     public function index()
     {
-        if ($this->request->isAjax) {
-        	echo "string";
-            // $model = Db::name('room')->where('status', 'in', '0,1');
-            // $list  = $model->order('id desc')->paginate(10);
-            // return view('index-list', [
-            //     'list' => $list,
-            // ]);
-        } else {
-            return view();
-        }
+        // if ($this->request->isAjax) {
+        //     $model = Db::name('room')->where('status', 'in', '0,1');
+        //     $list  = $model->order('id desc')->paginate(10);
+        //     return view('index-list', [
+        //         'list' => $list,
+        //     ]);
+        // } else {
+        return view();
+        // }
+    }
+
+    public function lists()
+    {
+        $model = Db::name('room')->where('status', 'in', '0,1');
+        $rooms  = $model->order('id desc')->paginate(10);
+        $list = $rooms->getCollection()->toArray();
+        // $list = Db::name('room')->where('status','in','0,1')->select();
+        $page = $users->render();
+        $this->assign('list', $list);
+        $this->assign('page', $page);
+        return view();
     }
 
     /***

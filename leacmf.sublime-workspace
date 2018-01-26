@@ -1,0 +1,521 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sider",
+				"sidebar-c"
+			],
+			[
+				"j",
+				"justify-content"
+			],
+			[
+				"doc",
+				"document\tjsWindow"
+			],
+			[
+				"text",
+				"text-indent"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"ht",
+				"html5\tSimple HTML5 Boilerplate"
+			],
+			[
+				"cont",
+				"contact_id"
+			],
+			[
+				"con",
+				"contact_id"
+			],
+			[
+				"_",
+				"_GET"
+			],
+			[
+				"va",
+				"value\tAttr"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"total",
+				"totalpages"
+			],
+			[
+				"pa",
+				"pageNum"
+			],
+			[
+				"a",
+				"a\t<a>"
+			],
+			[
+				"page",
+				"page"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"pat",
+				"patternEmail"
+			],
+			[
+				"preg",
+				"preg_match"
+			],
+			[
+				"per",
+				"preg_match"
+			],
+			[
+				"a-z",
+				"a-zA-z"
+			],
+			[
+				"date_de",
+				"date_default_timezone_set"
+			],
+			[
+				"cell",
+				"cellspacing\tAttr"
+			],
+			[
+				"p",
+				"position"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"header",
+				"header"
+			],
+			[
+				"suf",
+				"suffixs"
+			],
+			[
+				"suff",
+				"suffix"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"new",
+				"newNames"
+			],
+			[
+				"dir",
+				"dir"
+			],
+			[
+				"str",
+				"str_result"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"isa",
+				"is_array"
+			],
+			[
+				"pri",
+				"print_r"
+			],
+			[
+				"u",
+				"utf-8"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"au",
+				"Autoprefix CSS"
+			],
+			[
+				"colo",
+				"Color Picker: Insert Color"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pci",
+				"Package Control: Install Package"
+			],
+			[
+				"pca",
+				"Package Control: Add Channel"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/wamp64/www/myleacmf/application/admin/controller/IndexController.php",
+		"/D/wamp64/www/myleacmf/application/admin/controller/RoomController.php",
+		"/D/wamp64/www/myleacmf/leacmf.sublime-project",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
+		"/D/wamp64/bin/apache/apache2.4.23/bin/php.ini",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
+		"/D/wamp64/www/myleacmf/application/admin/model/Article.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/article/edit.html",
+		"/D/wamp64/www/myleacmf/application/admin/controller/ArticleController.php",
+		"/D/wamp64/www/myleacmf/application/database.php",
+		"/D/wamp64/www/myleacmf/data/backup/meeting.sql",
+		"/D/wamp64/www/myleacmf/application/admin/controller/MeetingController.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting/edit.html",
+		"/D/wamp64/www/myleacmf/application/admin/model/Meeting.php",
+		"/D/wamp64/www/myleacmf/application/admin/model/Room.php",
+		"/D/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf",
+		"/D/wamp64/www/tp5/public/index.php",
+		"/C/Users/Administrator/.ssh/id_rsa.pub",
+		"/D/cmder/vendor/init.bat",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/D/wamp64/www/blog/css/list.css",
+		"/E/迅雷下载/jiaoben4428/jiaoben4428/css/style.css",
+		"/D/wamp64/www/blog/css/style.css",
+		"/D/wamp64/www/blog/css/common.css",
+		"/D/wamp64/www/blog/css/page.css",
+		"/D/wamp64/www/blog/templets/default/list_article.htm",
+		"/D/wamp64/www/blog/templets/default/article_article.htm",
+		"/E/火车采集器V8/Data/54/WebPostError.html",
+		"/D/wamp64/www/blog/templets/default/head.htm",
+		"/D/wamp64/www/blog/templets/default/index.htm",
+		"/D/wamp64/www/blog/js/sidebar.js",
+		"/D/wamp64/www/blog/templets/default/footer.htm",
+		"/D/wamp64/www/blog/templets/default/index_article.htm",
+		"/D/wamp64/bin/apache/apache2.4.23/conf/httpd.conf",
+		"/D/wamp64/www/blog/templets/default/style/style.css",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/Localization.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/sbc-setting.sublime-settings",
+		"/D/wamp64/www/blog/templets/default/style/dedecms.css",
+		"/E/BaiduYunDownload/chrome/goagent-goagent-6360876/local/proxy.ini",
+		"/D/XX-Net-3.3.6/README.md",
+		"/D/XX-Net-3.3.6/.gitignore",
+		"/D/XX-Net-3.3.6/start.bat",
+		"/D/XX-Net-3.3.6/start.vbs",
+		"/D/XX-Net-3.3.6/code/default/gae_proxy/local/proxy.ini",
+		"/F/lsqlite3_fsl09x/extras/Makefile",
+		"/C/Users/Administrator/AppData/Local/Temp/HZ$D.970.4313/HZ$D.970.4314/lua-5.3.4/README",
+		"/D/wamp64/www/uploads/index.php",
+		"/F/lsqlite3_fsl09x/README",
+		"/F/lsqlite3_fsl09x/Makefile",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/PHP.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/wamp64/www/jkxy/003/MailList/update_contact.php",
+		"/D/wamp64/www/jkxy/003/MailList/update.php",
+		"/D/wamp64/www/jkxy/003/MailList/pdo.php",
+		"/D/wamp64/www/jkxy/003/MailList/login.php",
+		"/D/wamp64/www/jkxy/003/MailList/insert_user.php",
+		"/D/wamp64/www/jkxy/003/MailList/register.html",
+		"/D/wamp64/www/jkxy/003/MailList/showlist.php",
+		"/D/wamp64/www/jkxy/003/MailList/insert.php",
+		"/D/wamp64/www/jkxy/003/MailList/select_contacts.php",
+		"/D/wamp64/www/jkxy/003/MailList/createdb.php",
+		"/E/phpProject/index.php",
+		"/D/wamp64/www/jkxy/003/MailList/delete_contact.php",
+		"/D/wamp64/www/jkxy/003/MailList/change.php",
+		"/D/wamp64/www/jkxy/003/MailList/change_pwd.php",
+		"/D/wamp64/www/jkxy/003/MailList/insert_contact.php",
+		"/D/wamp64/www/jkxy/003/MailList/select_contact.class.php",
+		"/D/wamp64/www/jkxy/003/MailList/css/showlist.css",
+		"/D/wamp64/www/jkxy/003/MailList/css/change_pwd.css",
+		"/D/wamp64/www/jkxy/003/MailList/css/insert.css",
+		"/D/wamp64/www/jkxy/003/MailList/css/index.css",
+		"/D/wamp64/www/jkxy/003/MailList/page.class.php",
+		"/D/wamp64/www/jkxy/003/MailList/css/register.css",
+		"/F/A/希志爱野/第一會所新片@SIS001@(IDEAPOCKET)(IPZ-607)愛人協定_美人令嬢妻に絡みつく逃れられない黒い糸_希志あいの/(IDEAPOCKET)(IPZ-607)愛人協定 美人令嬢妻に絡みつく逃れられない黒い糸 希志あいの.srt",
+		"/E/项目/LG_CMA/HMI/Mode/Search/LocalSearchMode.cpp",
+		"/E/项目/LG_CMA/HMI/Mode/Search/AddressResultMode.cpp",
+		"/E/项目/LG_CMA/HMI/Mode/Search/LocalSearchMode.h",
+		"/E/PHP资料/面向对象/PHP 面向对象程序设计之抽象类与接口/源码/lesson07/02/person.interface.php",
+		"/E/PHP资料/面向对象/面象对象入门/源码/phone.class.php",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/04/select.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/code_func.php",
+		"/E/项目/jike/开发基础百度首页/baidu.html",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/02/pdo.php",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/03/pdo.php",
+		"/D/wamp64/www/jkxy/003/gfriend/index.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/register.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/pattern.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/index.css",
+		"/D/wamp64/www/jkxy/003/MailList/insert.html",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/ConvertToUTF8/ConvertToUTF8.sublime-settings",
+		"/D/wamp64/www/jkxy/003/MailList/index.php",
+		"/D/wamp64/www/jkxy/003/MailList/insert_register.php",
+		"/D/wamp64/www/jkxy/003/contact/index.html",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/04/pdo.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/index.html",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/05/cash.php",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/05/pdo.php",
+		"/D/wamp64/www/jkxy/001/01demo.php",
+		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/01/phpinfo.php",
+		"/E/PHP资料/面向对象/封装性/源码/lesson03/01/person.class.php",
+		"/D/wamp64/www/jkxy/002/baidu_register/action.php",
+		"/E/PHP资料/PHP链接MySQL数据库/源码/35/02php_select.php",
+		"/E/PHP资料/PHP链接MySQL数据库/源码/35/03php_del.php",
+		"/E/PHP资料/PHP链接MySQL数据库/源码/35/01php_insert.php",
+		"/D/wamp64/www/jkxy/001/pattern/index.php",
+		"/E/PHP资料/PHP链接MySQL数据库/源码/35/04update.php",
+		"/E/PHP资料/PHP链接MySQL数据库/源码/35/04php_update.php",
+		"/D/wamp64/www/jkxy/001/calculator/calculator.php",
+		"/D/wamp64/www/jkxy/001/pattern/index.css",
+		"/D/wamp64/www/jkxy/001/skydrive/index.php",
+		"/D/wamp64/www/jkxy/skydrive2/index.php",
+		"/D/wamp64/www/jkxy/001/skydrive/index.css",
+		"/D/wamp64/www/jkxy/001/skydrive/func_global.php",
+		"/D/wamp64/wampmanager.conf",
+		"/D/wamp64/wampmanager.ini",
+		"/D/wamp64/logs/apache_error.log",
+		"/D/wamp64/www/jkxy/skydrive2/index.css",
+		"/D/wamp64/www/jkxy/skydrive2/func_global.php",
+		"/D/wamp64/www/jkxy/skydrive2/copy.php",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/D/wamp64/www/jkxy/skydrive2/copyselect.php",
+		"/D/wamp64/www/jkxy/skydrive2/addDir.html",
+		"/D/wamp64/www/jkxy/skydrive2/mkdir.php",
+		"/D/wamp64/www/jkxy/skydrive2/rename.html",
+		"/D/wamp64/www/jkxy/skydrive2/rename.php",
+		"/D/wamp64/www/jkxy/skydrive2/upload.php"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 103.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "leacmf.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
