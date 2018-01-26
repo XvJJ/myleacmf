@@ -8,7 +8,7 @@
     ],
     "settings": {
         "xdebug": {
-             "url": "http://cmf.com/",
+             "url": "http://cmf.com/admin.php",
         }
     }
 }

@@ -5,6 +5,10 @@ use think\Model;
 
 class Room extends Model
 {
+    public static $cate = [
+        1 => '全部',
+        2 => '启用中'
+    ];
     /**
      * 自动完成
      * @var array

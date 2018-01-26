@@ -3,36 +3,31 @@ namespace app\admin\controller;
 
 use app\admin\model\Room;
 use think\Db;
+use think\Request;
 
 class RoomController extends CommonController
 {
-    // public function _initialize()
-    // {
-    //     parent::_initialize();
-    // }
+    public function _initialize()
+    {
+        parent::_initialize();
+    }
 
     public function index()
     {
-        // if ($this->request->isAjax) {
-        //     $model = Db::name('room')->where('status', 'in', '0,1');
-        //     $list  = $model->order('id desc')->paginate(10);
-        //     return view('index-list', [
-        //         'list' => $list,
-        //     ]);
-        // } else {
         return view();
-        // }
     }
 
     public function lists()
     {
-        $model = Db::name('room')->where('status', 'in', '0,1');
-        $rooms  = $model->order('id desc')->paginate(10);
-        $list = $rooms->getCollection()->toArray();
-        // $list = Db::name('room')->where('status','in','0,1')->select();
-        $page = $users->render();
+        $model      = Db::name('room')->where('status', 'in', [0, 1]);
+        $rooms      = $model->order('id desc')->paginate(10);
+        $list       = $rooms->getCollection()->toArray();
+        $id         = $list[0]['id'];
+        $create_aid = $list[0]['create_aid'];
+        $name       = $list[0]['name'];
+        $address    = $list[0]['address'];
+        $remark     = $list[0]['remark'];
         $this->assign('list', $list);
-        $this->assign('page', $page);
         return view();
     }
 
@@ -70,11 +65,10 @@ class RoomController extends CommonController
         } else {
             $id = $this->request->get('id', 0, 'intval');
             if (!$id) {
-                $this->error('文章不存在');
+                $this->error('会议室不存在');
             }
             $info = Room::get($id);
             $this->assign('info', $info);
-            $this->assign('cate', Room::$cate);
             return view();
         }
     }
