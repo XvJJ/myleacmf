@@ -27,7 +27,11 @@ class RoomController extends CommonController
         $name       = $list[0]['name'];
         $address    = $list[0]['address'];
         $remark     = $list[0]['remark'];
+        // var_dump($list);
+
         $this->assign('list', $list);
+        // exit();
+        // return $this->fetech();
         return view();
     }
 

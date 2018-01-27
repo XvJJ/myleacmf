@@ -30,10 +30,15 @@
                 <td>
                     <div class="text-left">
                         <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改"><i class="fa fa-edit"></i> 修改</a>
-                        <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get"><i class="fa fa-trash"></i> 删除</a>
+                        <neq name="vo.cate" value="1">
+                            <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get"><i class="fa fa-trash"></i> 删除</a>
+                        </neq>
                     </div>
                 </td>
             </tr>
         </volist>
     </tbody>
 </table>
+<div class="pull-right">
+    {$page}
+</div>
