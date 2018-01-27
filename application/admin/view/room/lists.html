@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th style="width: 48px">#</th>
-            <th style="width:48px">创建人ID</th>
+            <th style="width:100px">创建人ID</th>
             <th style="width: 100px">会议室名称</th>
             <th>会议室地址</th>
             <th>备注</th>
@@ -11,29 +11,31 @@
         </tr>
     </thead>
     <tbody>
-        <volist name="list" id="vo">
-            <tr>
-                <td class="">{$vo.id}</td>
-                <td class="">{$vo.create_aid}</td>
-                <td>
-                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:100px;" title="{$vo.name}">{$vo.name}</div>
-                </td>
-                <td>
-                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:200px;" title="{$vo.address}">{$vo.address}</div>
-                </td>
-                <td>
-                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:400px;" title="{$vo.remark}">{$vo.remark}</div>
-                </td>
-                <td>
-                    <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0"><span class="{$vo.status?'text-yellow':'text-muted'}"><i class="fa fa-circle"></i> {$vo.status?'上架':'下架'}</span></a>
-                </td>
-                <td>
-                    <div class="text-left">
-                        <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改"><i class="fa fa-edit"></i> 修改</a>
-                        <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get"><i class="fa fa-trash"></i> 删除</a>
-                    </div>
-                </td>
-            </tr>
-        </volist>
+        <notempty name="list">
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="">{$vo.id}</td>
+                    <td class="">{$vo.create_aid}</td>
+                    <td>
+                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:100px;" title="{$vo.name}">{$vo.name}</div>
+                    </td>
+                    <td>
+                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:200px;" title="{$vo.address}">{$vo.address}</div>
+                    </td>
+                    <td>
+                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:400px;" title="{$vo.remark}">{$vo.remark}</div>
+                    </td>
+                    <td>
+                        <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0"><span class="{$vo.status?'text-yellow':'text-muted'}"><i class="fa fa-circle"></i> {$vo.status?'启用':'停用'}</span></a>
+                    </td>
+                    <td>
+                        <div class="text-left">
+                            <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改"><i class="fa fa-edit"></i> 修改</a>
+                            <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get"><i class="fa fa-trash"></i> 删除</a>
+                        </div>
+                    </td>
+                </tr>
+            </volist>
+        </notempty>
     </tbody>
 </table>

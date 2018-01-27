@@ -3,12 +3,12 @@
     [
         {
             "follow_symlinks": true,
-            "path": "."
+            "path": "/D/wamp64/www/myleacmf"
         }
     ],
     "settings": {
         "xdebug": {
-             "url": "http://cmf.com/admin.php",
+             "url": "http://cmf.com",
         }
     }
 }
