@@ -19,19 +19,10 @@ class RoomController extends CommonController
 
     public function lists()
     {
-        $model      = Db::name('room')->where('status', '3');
+        $model      = Db::name('room')->where('status', 'in', [0,1]);
         $rooms      = $model->order('id desc')->paginate(10);
         $list       = $rooms->getCollection()->toArray();
-        // $id         = $list[0]['id'];
-        // $create_aid = $list[0]['create_aid'];
-        // $name       = $list[0]['name'];
-        // $address    = $list[0]['address'];
-        // $remark     = $list[0]['remark'];
-        // var_dump($list);
-
         $this->assign('list', $list);
-        // exit();
-        // return $this->fetech();
         return view();
     }
 

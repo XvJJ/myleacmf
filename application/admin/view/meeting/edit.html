@@ -3,36 +3,29 @@
     <div class="box-body">
         <form class="layui-form" action="{:url()}" method="post" id="goods-form">
             <div class="layui-form-item">
-                <label class="layui-form-label">标题</label>
+                <label class="layui-form-label">会议标题</label>
                 <div class="layui-input-block">
                     <input type="text" name="title" placeholder="" lay-verify="required" value="{$info.title|default=''}" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">类型</label>
+                <label class="layui-form-label">会议室</label>
                 <div class="layui-input-inline">
                     <select name="cate" class="form-control input-sm" lay-verify="required">
                         <option value=""></option>
-                        <volist name="cate" id="vo">
-                            <option value="{$key}" <php>if(isset($info)&&$info['cate']==$key):echo 'selected="selected"';endif;</php>
-                                <php>if(!isset($info) && 2==$key ):echo 'selected="selected"';endif;</php>>{$vo}</option>
-                        </volist>
+                        <notempty name="cate">
+                            <volist name="cate" id="vo">
+                                <option value="{$key}" <php>if(isset($info)&&$info['cate']==$key):echo 'selected="selected"';endif;</php>
+                                    <php>if(!isset($info) && 2==$key ):echo 'selected="selected"';endif;</php>>{$vo}</option>
+                            </volist>
+                        </notempty>
                     </select>
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">封面图</label>
+                <lable class="layui-form-label">备注</lable>
                 <div class="layui-input-block">
-                    <button type="button" class="btn btn-primary btn-flat" id="upload-single">
-                        <i class="fa fa-file-image-o"></i>上传图片
-                    </button>
-                    <div class="timeline-body">
-                        <notempty name="info.cover_id">
-                            <div class="img"><a class="btn btn-xs"><i class="fa fa-trash"></i></a><img src="{$info.cover_id|get_file_path}" class="img-responsive">
-                                <input type="hidden" name="cover_id" value="{$info.cover_id}">
-                            </div>
-                        </notempty>
-                    </div>
+                    <textarea name="remark" id="remark" cols="30" rows="5" placeholder="" lay-verify="" value="{$info.remark|default=''}" class="layui-textarea"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
