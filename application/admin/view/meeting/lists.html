@@ -2,8 +2,8 @@
     <thead>
         <tr>
             <th style="width: 48px">#</th>
-            <th style="width:400px">标题</th>
-            <th>创建人</th>
+            <th>创建人ID</th>
+            <th style="width:400px">会议名称</th>            
             <th>会议室</th>
             <th>开始时间</th>
             <th>占用时间</th>
@@ -16,7 +16,7 @@
             <tr>
                 <td class="">{$vo.id}</td>
                 <td>
-                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:400px;" title="{$vo.title}">{$vo.title}</div>
+                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:400px;" title="{$vo.name}">{$vo.name}</div>
                 </td>
                 <td>
                     {$user[$vo.create_id]|default=''}
@@ -26,7 +26,7 @@
                         <a href="{$Request.domain}/view/{$vo.id}" class="iframe" data-width="480px">{$Request.domain}/view/{$vo.id}</a>
                     </code>
                 </td>
-                <td>{$vo.update_time|date="Y-m-d H:i",###}</td>
+                <td>{$vo.start_time|date="Y-m-d H:i",###}</td>
                 <td>
                     <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0">
                         <span class="{$vo.status?'text-yellow':'text-muted'}">
@@ -48,5 +48,4 @@
     </tbody>
 </table>
 <div class="pull-right">
-    {$list->render()}
 </div>

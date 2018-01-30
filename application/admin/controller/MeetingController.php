@@ -34,14 +34,18 @@ class MeetingController extends CommonController
 
     public function lists()
     {
-        $model = DB::name('meeting')->where('status', 'in', [0, 1]);
+        $model = Db::name('meeting')->where('status', 'in', [0, 1]);
         $meetings = $model->order('id desc')->paginate(10);
         $list = $meetings->getCollection()->toArray();
-        foreach ($list as $key ) {
-            $start_time = date('Y-m-d h:i', $key['start_time']);
-            $key['start_time'] = $start_time;
-        }
-        $this->assign('list', $lists);
+        $user = Db::name('admin')->where('status',1)->order('id desc')->select();
+        // $timeList = array();
+        // foreach ($list as $key) {
+        //     $start_time = date('Y-m-d h:i', $key['start_time']);
+        //     array_push($timeList, $start_time);
+        // }
+        $this->assign('lists', $lists);
+        $this->assign('lists',$user);
+        $this->assign('lists', $timeList);
         return view();
     }
 
@@ -99,9 +103,7 @@ class MeetingController extends CommonController
      */
     public function getRoomList()
     {
-        $model = Db::name('room')->where('status', 'in', [0, 1]);
-        $rooms = $model->order('id desc')->paginate();
-        $list = $rooms->getCollection()->toArray();
+        $list = Db::name('room')->where('status', 'in', [0, 1])->order('id desc')->select();
         return $list;
     }
 }
