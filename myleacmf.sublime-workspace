@@ -4,180 +4,400 @@
 		"selected_items":
 		[
 			[
-				"sider",
-				"sidebar-c"
-			],
-			[
-				"j",
-				"justify-content"
-			],
-			[
-				"doc",
-				"document\tjsWindow"
-			],
-			[
-				"text",
-				"text-indent"
-			],
-			[
-				"b",
-				"background"
-			],
-			[
-				"fl",
-				"float"
-			],
-			[
-				"cl",
-				"clear"
-			],
-			[
-				"ht",
-				"html5\tSimple HTML5 Boilerplate"
-			],
-			[
-				"cont",
-				"contact_id"
-			],
-			[
-				"con",
-				"contact_id"
-			],
-			[
-				"_",
-				"_GET"
+				"du",
+				"document"
 			],
 			[
 				"va",
-				"value\tAttr"
+				"var_dump"
 			],
 			[
-				"st",
+				"style",
 				"style\tAttr"
 			],
 			[
-				"mar",
-				"margin-left"
+				"win",
+				"win_height"
 			],
 			[
-				"total",
-				"totalpages"
+				"off",
+				"off_height"
 			],
 			[
-				"pa",
-				"pageNum"
+				"al",
+				"align-center"
 			],
 			[
-				"a",
-				"a\t<a>"
+				"back",
+				"background-size"
 			],
 			[
-				"page",
-				"page"
+				"p",
+				"placeholder\tAttr"
 			],
 			[
-				"font",
-				"font-weight"
+				"c",
+				"cellspacing\tAttr"
 			],
 			[
-				"fon",
-				"font-size"
+				"s",
+				"space-between"
+			],
+			[
+				"bor",
+				"border-color"
+			],
+			[
+				"ce",
+				"cellspacing\tAttr"
+			],
+			[
+				"Thinkphp",
+				"ThinkPHP5快速入门"
+			],
+			[
+				"flex",
+				"flex-center"
+			],
+			[
+				"p4",
+				"p4_bg1.png\tw:629 h:20"
 			],
 			[
 				"pos",
 				"position"
 			],
 			[
-				"margin",
-				"margin-left"
+				"fun",
+				"function〔keyword〕"
 			],
 			[
-				"ab",
-				"absolute"
+				"p1",
+				"p1_2.png\tw:540 h:108"
 			],
 			[
-				"le",
-				"left"
+				"marg",
+				"margin"
 			],
 			[
-				"ali",
+				"if",
+				"if\tif …"
+			],
+			[
+				"margin-",
+				"margin-top"
+			],
+			[
+				"fl",
+				"flex-start"
+			],
+			[
+				"p3",
+				"p3_2.png\tw:609 h:441"
+			],
+			[
+				"textal",
 				"text-align"
 			],
 			[
-				"pat",
-				"patternEmail"
+				"p2",
+				"p2_bg2.png\tw:640 h:64"
 			],
 			[
-				"preg",
-				"preg_match"
+				"text",
+				"text-center"
 			],
 			[
-				"per",
-				"preg_match"
+				"con",
+				"content"
 			],
 			[
-				"a-z",
-				"a-zA-z"
+				"add",
+				"addClass〔function〕"
 			],
 			[
-				"date_de",
-				"date_default_timezone_set"
+				"sr",
+				"scroll\t.scroll()"
+			],
+			[
+				"auto",
+				"autoPlay"
+			],
+			[
+				"p5",
+				"p5_bg.png\tw:545 h:214"
+			],
+			[
+				"p4_",
+				"p4_bg2.png\tw:540 h:165"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"rl",
+				"rl_css"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"ff",
+				"ff944c"
+			],
+			[
+				"font",
+				"font\tTag"
+			],
+			[
+				"no",
+				"normal"
+			],
+			[
+				"space",
+				"space-between"
+			],
+			[
+				"b",
+				"bolder"
+			],
+			[
+				"felx",
+				"flex-end"
+			],
+			[
+				"span",
+				"span\tTag"
+			],
+			[
+				"php",
+				"phpversion〔function〕"
+			],
+			[
+				"display",
+				"display:block"
+			],
+			[
+				"ti",
+				"title\tTag"
+			],
+			[
+				"spa",
+				"space-between"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"flex-no",
+				"flex-nowrap-between"
+			],
+			[
+				"clear",
+				"clear: both;\tProperty"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"onmou",
+				"onMouseOver\tSyntheticEvent"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"f",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"ready",
+				"ready〔function〕"
+			],
+			[
+				"sc",
+				"script\tTag"
+			],
+			[
+				"lin",
+				"line-height"
+			],
+			[
+				"footer_b",
+				"footer_bottom"
+			],
+			[
+				"d",
+				"document\tjsWindow"
+			],
+			[
+				"ex",
+				"exampleInputPassword1"
+			],
+			[
+				"list",
+				"list-inline\tBootstrapClass"
+			],
+			[
+				"scr",
+				"scrollTop"
+			],
+			[
+				"t",
+				"templets"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"btn",
+				"btn4.png\tw:827 h:111"
+			],
+			[
+				"k",
+				"k1.png\tw:433 h:281"
+			],
+			[
+				"a",
+				"a_b1.png\tw:1680 h:295"
+			],
+			[
+				"sp",
+				"space-between"
+			],
+			[
+				"tel",
+				"tel:0519-87175656"
+			],
+			[
+				"foot_logo",
+				"foot_logo2.png\tw:498 h:151"
+			],
+			[
+				"wr",
+				"writeln〔function〕"
+			],
+			[
+				"wi",
+				"writeln〔function〕"
+			],
+			[
+				"docu",
+				"document.writeln"
+			],
+			[
+				"target",
+				"target=\"_self"
+			],
+			[
+				"_",
+				"_self"
+			],
+			[
+				"ta",
+				"target"
+			],
+			[
+				"i",
+				"images"
+			],
+			[
+				"doc",
+				"document.writeln"
+			],
+			[
+				"http",
+				"http-equiv\tAttr"
+			],
+			[
+				"j",
+				"justify-content"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"png",
+				"png"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"part",
+				"part_title"
+			],
+			[
+				"part1",
+				"part1_row"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"text-",
+				"text-indent"
 			],
 			[
 				"cell",
 				"cellspacing\tAttr"
 			],
 			[
-				"p",
-				"position"
+				"col",
+				"color"
 			],
 			[
-				"inlin",
+				"ba",
+				"background-color"
+			],
+			[
+				"bck",
+				"background-size"
+			],
+			[
+				"wor",
+				"word-spacing"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"in",
 				"inline-block"
-			],
-			[
-				"header",
-				"header"
-			],
-			[
-				"suf",
-				"suffixs"
-			],
-			[
-				"suff",
-				"suffix"
-			],
-			[
-				"var",
-				"var_dump"
-			],
-			[
-				"new",
-				"newNames"
-			],
-			[
-				"dir",
-				"dir"
-			],
-			[
-				"str",
-				"str_result"
-			],
-			[
-				"print",
-				"print_r"
-			],
-			[
-				"isa",
-				"is_array"
-			],
-			[
-				"pri",
-				"print_r"
-			],
-			[
-				"u",
-				"utf-8"
 			]
 		]
 	},
@@ -204,44 +424,108 @@
 				"Package Control: Install Package"
 			],
 			[
-				"re",
-				"Package Control: Remove Package"
-			],
-			[
 				"ins",
 				"Package Control: Install Package"
 			],
 			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"au",
+				"auto",
 				"Autoprefix CSS"
-			],
-			[
-				"colo",
-				"Color Picker: Insert Color"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"remove",
 				"Package Control: Remove Package"
 			],
 			[
-				"pci",
+				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"pca",
-				"Package Control: Add Channel"
+				"re",
+				"Package Control: Remove Package"
 			],
 			[
-				"Package Control: install",
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"php",
+				"phpfmt: format now"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"co",
+				"Color Picker"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"be",
+				"Beautify::Beautify File"
+			],
+			[
+				"inst",
 				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Autoprefix CSS"
+			],
+			[
+				"mini",
+				"Minify::Minify File"
+			],
+			[
+				"au",
+				"Autoprefix CSS"
+			],
+			[
+				"b",
+				"Beautify::Beautify File"
+			],
+			[
+				"utf",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"min",
+				"Minify::Minify File"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"mi",
+				"Minify::Minify File"
+			],
+			[
+				"a",
+				"Autoprefix CSS"
+			],
+			[
+				"ctage",
+				"CTags: Rebuild Tags"
+			],
+			[
+				"h",
+				"HTMLPrettify"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"update pa",
+				"Package Control: Upgrade/Overwrite All Packages"
 			]
 		],
 		"width": 540.0
@@ -263,159 +547,144 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/D/wamp64/www/myleacmf",
-		"/D/wamp64/www/myleacmf/application",
-		"/D/wamp64/www/myleacmf/application/admin",
-		"/D/wamp64/www/myleacmf/application/admin/controller",
-		"/D/wamp64/www/myleacmf/application/admin/model",
-		"/D/wamp64/www/myleacmf/application/admin/validate",
-		"/D/wamp64/www/myleacmf/application/admin/view",
-		"/D/wamp64/www/myleacmf/application/admin/view/room",
-		"/D/wamp64/www/myleacmf/application/admin/view/user",
-		"/D/wamp64/www/myleacmf/data",
-		"/D/wamp64/www/myleacmf/data/backup",
-		"/D/wamp64/www/myleacmf/public"
-	],
 	"file_history":
 	[
-		"/D/wamp64/www/myleacmf/application/admin/view/room/lists.html",
-		"/D/wamp64/www/myleacmf/application/admin/view/user/lists.html",
+		"/F/任务/20180130缙云搜狗站加弹窗/sgfk.jyhwyy.com/zuidi.js",
+		"/F/任务/20180130缙云搜狗站加弹窗/sgfk.jyhwyy.com/tc.js",
+		"/F/任务/20180130缙云搜狗站加弹窗/sgnk.jyhwyy.com/dbtczx.js",
+		"/D/wamp64/www/myleacmf/application/admin/controller/MeetingController.php",
+		"/D/wamp64/www/myleacmf/thinkphp/library/think/Error.php",
+		"/D/wamp64/www/myleacmf/data/backup/meeting.sql",
+		"/D/wamp64/www/myleacmf/thinkphp/library/think/App.php",
+		"/F/专题/index.html",
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting/index.html",
+		"/F/任务/20180129丹阳春节妇科专题1.26/cjfk/index.html",
+		"/D/wamp64/bin/apache/apache2.4.23/bin/php.ini",
+		"/D/wamp64/www/myleacmf/myleacmf.sublime-project",
+		"/D/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf",
+		"/F/任务/20180129丹阳春节妇科专题1.26/cjfk/css/style.css",
+		"/D/wamp64/www/njgbyy/templets/default/index.htm",
+		"/D/wamp64/www/njgbyy/templets/default/css/index.css",
+		"/D/wamp64/www/njgbyy/templets/default/index_article.htm",
+		"/D/wamp64/www/demo/templets/default/index.htm",
+		"/D/wamp64/www/njgbyy/templets/default/list_article_yyjj.htm",
+		"/D/wamp64/www/njgbyy/templets/default/list_article.htm",
+		"/D/wamp64/www/njgbyy/templets/default/css/style.css",
+		"/F/任务/FIN-20180123万厚医院建新站/head.htm",
+		"/F/任务/FIN-20180123万厚医院建新站/index.htm",
+		"/D/wamp64/www/demo/templets/default/list_article.htm",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx2566483F_view.tmp/head.htm",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx67C907A5_view.tmp/sub_config.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx67C907A5_view.tmp/system.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx67C907A5_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx28059A01_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx2D3708BB_view.tmp/base.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx119F7691_view.tmp/index.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxD31A370F_view.tmp/api.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxE0A22A0C_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FTP资料/61.155.161.243.ftp",
+		"/C/Users/Administrator/Desktop/FTP资料/61.155.173.250.ftp",
+		"/C/Users/Administrator/Desktop/FTP资料/61.155.194.43.ftp",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx67C907A5_view.tmp/route.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx0DF772E3_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx00C59734_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx2B58F8D4_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx37C3F663_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx6768BB71_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx9DDE9B76_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx64C412D1_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxA13822B1_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxFE83FF7B_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx205DB0C3_view.tmp/charset.func.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx55FF38AB_view.tmp/inc_stat.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx6885BFF1_view.tmp/archive.helper.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx205DB0C3_view.tmp/common.inc.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx205DB0C3_view.tmp/common.func.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxEFCE88A9_view.tmp/config.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx205DB0C3_view.tmp/datalistcp.class.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx63089FFA_view.tmp/index.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxBC26384F_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx39711DCA_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx3AEA8018_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fx24769CFA_view.tmp/database.php",
+		"/C/Users/Administrator/Desktop/FlashFXP_Special/Cache/~fxCE5D067A_view.tmp/database.php",
 		"/D/wamp64/www/myleacmf/application/admin/controller/RoomController.php",
-		"/D/wamp64/www/myleacmf/data/backup/leacmf.sql",
-		"/D/wamp64/www/myleacmf/application/admin/model/Article.php",
-		"/D/wamp64/www/myleacmf/data/backup/room.sql",
+		"/F/任务/20180127泰州东方皮肤后台所有文章违禁词批量去掉/database.php",
+		"/C/Users/Administrator/Downloads/Programs/批量添加文章的插件/chuli.php.dump",
+		"/C/Users/Administrator/Downloads/Programs/批量添加文章的插件/chuli.php",
+		"/C/Users/Administrator/Downloads/Programs/批量添加文章的插件/index.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/ad/index_list.html",
+		"/D/wamp64/www/myleacmf/thinkphp/library/think/Response.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/room/lists.html",
+		"/D/wamp64/www/myleacmf/runtime/temp/68679a08f20d884f58460161e6487e44.php",
+		"/D/wamp64/www/myleacmf/application/command.php",
 		"/D/wamp64/www/myleacmf/application/admin/model/Room.php",
-		"/D/wamp64/www/myleacmf/application/admin/validate/Room.php",
-		"/D/wamp64/www/myleacmf/application/admin/view/user/index.html",
+		"/D/wamp64/www/myleacmf/application/v1/model/User.php",
 		"/D/wamp64/www/myleacmf/application/admin/controller/UserController.php",
 		"/D/wamp64/www/myleacmf/application/admin/view/room/index.html",
-		"/D/wamp64/www/myleacmf/thinkphp/library/think/App.php",
-		"/D/wamp64/www/myleacmf/thinkphp/library/think/Response.php",
-		"/D/wamp64/www/myleacmf/thinkphp/library/think/Error.php",
-		"/D/wamp64/www/myleacmf/runtime/temp/68679a08f20d884f58460161e6487e44.php",
-		"/D/wamp64/www/myleacmf/application/admin/view/public/base.html",
-		"/D/wamp64/www/myleacmf/thinkphp/library/think/Controller.php",
-		"/D/wamp64/www/myleacmf/thinkphp/library/think/Loader.php",
-		"/D/wamp64/www/myleacmf/application/admin/view/article/index.html",
-		"/D/wamp64/www/myleacmf/application/config.php",
+		"/D/wamp64/www/myleacmf/application/common/controller/ApiController.php",
+		"/D/wamp64/www/myleacmf/application/tags.php",
 		"/D/wamp64/www/myleacmf/application/route.php",
-		"/D/wamp64/www/myleacmf/application/admin/controller/ArticleController.php",
-		"/D/wamp64/www/myleacmf/application/admin/view/room/index_list.html",
-		"/D/wamp64/www/myleacmf/application/admin/view/article/index_list.html",
-		"/D/wamp64/www/myleacmf/application/admin/controller/CommonController.php",
-		"/D/wamp64/www/myleacmf/myleacmf.sublime-project",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
-		"/D/wamp64/www/myleacmf/application/admin/controller/IndexController.php",
-		"/D/wamp64/www/myleacmf/leacmf.sublime-project",
-		"/D/wamp64/bin/apache/apache2.4.23/bin/php.ini",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
-		"/D/wamp64/www/myleacmf/application/admin/view/article/edit.html",
 		"/D/wamp64/www/myleacmf/application/database.php",
-		"/D/wamp64/www/myleacmf/data/backup/meeting.sql",
-		"/D/wamp64/www/myleacmf/application/admin/controller/MeetingController.php",
-		"/D/wamp64/www/myleacmf/application/admin/view/meeting/edit.html",
-		"/D/wamp64/www/myleacmf/application/admin/model/Meeting.php",
-		"/D/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf",
-		"/D/wamp64/www/tp5/public/index.php",
-		"/C/Users/Administrator/.ssh/id_rsa.pub",
-		"/D/cmder/vendor/init.bat",
-		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/wamp64/www/myleacmf/application/config.php",
+		"/D/wamp64/www/myleacmf/application/common.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/room/lists1.html",
+		"/D/wamp64/www/myleacmf/thinkphp/helper.php",
+		"/D/wamp64/www/myleacmf/thinkphp/library/think/Request.php",
+		"/D/wamp64/www/myleacmf/application/admin/view/room/index_list.html",
+		"/D/wamp64/www/myleacmf/application/admin/controller/ArticleController.php",
+		"/F/任务/20180126万厚两个手机站简介404/smc.gbyy120.com/head.htm",
+		"/F/任务/20180126万厚两个手机站简介404/sgm.gbyy120.com/head.htm",
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting/index_list.html",
+		"/D/wamp64/www/myleacmf/application/admin/view/article/index_list.html",
+		"/D/wamp64/www/myleacmf/data/backup/leacmf.sql",
+		"/D/wamp64/www/myleacmf/data/backup/room.sql",
+		"/D/wamp64/www/myleacmf/application/admin/view/article/edit.html",
+		"/D/wamp64/www/myleacmf/application/admin/view/room/edit.html",
+		"/D/wamp64/www/myleacmf/application/admin/validate/Room.php",
+		"/D/wamp64/www/myleacmf/application/admin/validate/Meeting.php",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/Default (Windows).sublime-keymap",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
-		"/D/wamp64/www/blog/css/list.css",
-		"/E/迅雷下载/jiaoben4428/jiaoben4428/css/style.css",
-		"/D/wamp64/www/blog/css/style.css",
-		"/D/wamp64/www/blog/css/common.css",
-		"/D/wamp64/www/blog/css/page.css",
-		"/D/wamp64/www/blog/templets/default/list_article.htm",
-		"/D/wamp64/www/blog/templets/default/article_article.htm",
-		"/E/火车采集器V8/Data/54/WebPostError.html",
-		"/D/wamp64/www/blog/templets/default/head.htm",
-		"/D/wamp64/www/blog/templets/default/index.htm",
-		"/D/wamp64/www/blog/js/sidebar.js",
-		"/D/wamp64/www/blog/templets/default/footer.htm",
-		"/D/wamp64/www/blog/templets/default/index_article.htm",
-		"/D/wamp64/bin/apache/apache2.4.23/conf/httpd.conf",
-		"/D/wamp64/www/blog/templets/default/style/style.css",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/Localization.sublime-settings",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/sbc-setting.sublime-settings",
-		"/D/wamp64/www/blog/templets/default/style/dedecms.css",
-		"/E/BaiduYunDownload/chrome/goagent-goagent-6360876/local/proxy.ini",
-		"/D/XX-Net-3.3.6/README.md",
-		"/D/XX-Net-3.3.6/.gitignore",
-		"/D/XX-Net-3.3.6/start.bat",
-		"/D/XX-Net-3.3.6/start.vbs",
-		"/D/XX-Net-3.3.6/code/default/gae_proxy/local/proxy.ini",
-		"/F/lsqlite3_fsl09x/extras/Makefile",
-		"/C/Users/Administrator/AppData/Local/Temp/HZ$D.970.4313/HZ$D.970.4314/lua-5.3.4/README",
-		"/D/wamp64/www/uploads/index.php",
-		"/F/lsqlite3_fsl09x/README",
-		"/F/lsqlite3_fsl09x/Makefile",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/PHP.sublime-settings",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
-		"/D/wamp64/www/jkxy/003/MailList/update_contact.php",
-		"/D/wamp64/www/jkxy/003/MailList/update.php",
-		"/D/wamp64/www/jkxy/003/MailList/pdo.php",
-		"/D/wamp64/www/jkxy/003/MailList/login.php",
-		"/D/wamp64/www/jkxy/003/MailList/insert_user.php",
-		"/D/wamp64/www/jkxy/003/MailList/register.html",
-		"/D/wamp64/www/jkxy/003/MailList/showlist.php",
-		"/D/wamp64/www/jkxy/003/MailList/insert.php",
-		"/D/wamp64/www/jkxy/003/MailList/select_contacts.php",
-		"/D/wamp64/www/jkxy/003/MailList/createdb.php",
-		"/E/phpProject/index.php",
-		"/D/wamp64/www/jkxy/003/MailList/delete_contact.php",
-		"/D/wamp64/www/jkxy/003/MailList/change.php",
-		"/D/wamp64/www/jkxy/003/MailList/change_pwd.php",
-		"/D/wamp64/www/jkxy/003/MailList/insert_contact.php",
-		"/D/wamp64/www/jkxy/003/MailList/select_contact.class.php",
-		"/D/wamp64/www/jkxy/003/MailList/css/showlist.css",
-		"/D/wamp64/www/jkxy/003/MailList/css/change_pwd.css",
-		"/D/wamp64/www/jkxy/003/MailList/css/insert.css",
-		"/D/wamp64/www/jkxy/003/MailList/css/index.css",
-		"/D/wamp64/www/jkxy/003/MailList/page.class.php",
-		"/D/wamp64/www/jkxy/003/MailList/css/register.css",
-		"/F/A/希志爱野/第一會所新片@SIS001@(IDEAPOCKET)(IPZ-607)愛人協定_美人令嬢妻に絡みつく逃れられない黒い糸_希志あいの/(IDEAPOCKET)(IPZ-607)愛人協定 美人令嬢妻に絡みつく逃れられない黒い糸 希志あいの.srt",
-		"/E/项目/LG_CMA/HMI/Mode/Search/LocalSearchMode.cpp",
-		"/E/项目/LG_CMA/HMI/Mode/Search/AddressResultMode.cpp",
-		"/E/项目/LG_CMA/HMI/Mode/Search/LocalSearchMode.h",
-		"/E/PHP资料/面向对象/PHP 面向对象程序设计之抽象类与接口/源码/lesson07/02/person.interface.php",
-		"/E/PHP资料/面向对象/面象对象入门/源码/phone.class.php",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/04/select.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/code_func.php",
-		"/E/项目/jike/开发基础百度首页/baidu.html",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/02/pdo.php",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/03/pdo.php",
-		"/D/wamp64/www/jkxy/003/gfriend/index.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/register.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/pattern.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/index.css",
-		"/D/wamp64/www/jkxy/003/MailList/insert.html",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/ConvertToUTF8/ConvertToUTF8.sublime-settings",
-		"/D/wamp64/www/jkxy/003/MailList/index.php",
-		"/D/wamp64/www/jkxy/003/MailList/insert_register.php",
-		"/D/wamp64/www/jkxy/003/contact/index.html",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/04/pdo.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/index.html",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/05/cash.php",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/05/pdo.php",
-		"/D/wamp64/www/jkxy/001/01demo.php",
-		"/E/PHP资料/面向对象/数据库抽象层 PDO/源码/01/phpinfo.php",
-		"/E/PHP资料/面向对象/封装性/源码/lesson03/01/person.class.php",
-		"/D/wamp64/www/jkxy/002/baidu_register/action.php",
-		"/E/PHP资料/PHP链接MySQL数据库/源码/35/02php_select.php",
-		"/E/PHP资料/PHP链接MySQL数据库/源码/35/03php_del.php",
-		"/E/PHP资料/PHP链接MySQL数据库/源码/35/01php_insert.php",
-		"/D/wamp64/www/jkxy/001/pattern/index.php"
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting/edit.html",
+		"/D/wamp64/www/njgbyy/templets/default/article_article.htm",
+		"/F/任务/20180126六合新棠加百度代码/www.lhxtnk.com/footer.js",
+		"/F/任务/20180126六合新棠加百度代码/www.lhxtnk.com/index.htm",
+		"/F/任务/20180126六合新棠加百度代码/www.lhxtnk.com/footer.htm",
+		"/F/任务/20180126六合新棠加百度代码/www.lhxtnk.com/swt.js",
+		"/F/任务/20180126六合新棠加百度代码/m.lhxtnk.com/swtdlj.js",
+		"/D/wamp64/www/myleacmf/data/backup/leacmf0126.sql",
+		"/F/任务/FIN-20180125南京万厚风湿网站病种导航修改/head.htm",
+		"/F/任务/FIN-20180125南京万厚风湿网站病种导航修改/0public.css",
+		"/C/Users/Administrator/Downloads/pac.txt",
+		"/E/shadowsocksR/pac.txt",
+		"/E/shadowsocksR/user.rule",
+		"/D/wamp64/www/myleacmf/data/backup/meeting备份.sql",
+		"/D/wamp64/www/myleacmf/data/backup/meeting.sql.dump",
+		"/F/任务/20180125六合新棠新年专题复制/xndfj/index.html",
+		"/D/wamp64/www/njgbyy/templets/default/head.htm",
+		"/D/wamp64/www/njgbyy/templets/default/js/top.js",
+		"/D/wamp64/www/myleacmf/application/home/controller/IndexController.php",
+		"/D/wamp64/www/njgbyy/templets/default/list.htm",
+		"/F/任务/20180125南京万厚风湿网站病种导航修改/head.htm",
+		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public.css",
+		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public备份.css",
+		"/D/wamp64/www/njgbyy/templets/default/css/head.css",
+		"/D/wamp64/www/njgbyy/templets/default/yuyue.htm",
+		"/D/wamp64/www/njgbyy/templets/default/footer.htm",
+		"/F/DedeCMS-V5.7-UTF8-SP1/uploads/templets/default/article_article.htm",
+		"/F/专题/TouchSlide1.1-00/demo/3.4sohuFocus.html",
+		"/D/wamp64/www/njgbyy/templets/default/css/global.mobile.css",
+		"/D/wamp64/www/njgbyy/templets/default/js/bottom.js",
+		"/D/wamp64/www/njgbyy/templets/default/css/footer.css",
+		"/D/wamp64/www/njgbyy/templets/default/js/public.js"
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
-		"height": 103.0,
+		"height": 130.0,
 		"where_history":
 		[
 		]
@@ -425,7 +694,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"ajax"
+			"url",
+			"flex-between",
+			"data",
+			"cate"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -433,6 +705,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"between"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -450,11 +723,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 31.0
 	},
 	"input":
 	{
-		"height": 45.0
+		"height": 52.0
 	},
 	"layout":
 	{
@@ -483,15 +756,19 @@
 	{
 		"height": 0.0
 	},
+	"output.unsaved_changes":
+	{
+		"height": 118.0
+	},
 	"output.xdebug":
 	{
-		"height": 145.0
+		"height": 151.0
 	},
 	"pinned_build_system": "",
 	"project": "myleacmf.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -529,50 +806,20 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"44":
+				"20":
 				{
 					"group": 0,
 					"index": 0
 				},
-				"45":
-				{
-					"group": 0,
-					"index": 2
-				},
-				"46":
-				{
-					"group": 0,
-					"index": 7
-				},
-				"47":
+				"28":
 				{
 					"group": 0,
 					"index": 1
 				},
-				"54":
+				"29":
 				{
 					"group": 0,
-					"index": 8
-				},
-				"55":
-				{
-					"group": 0,
-					"index": 6
-				},
-				"64":
-				{
-					"group": 0,
-					"index": 3
-				},
-				"65":
-				{
-					"group": 0,
-					"index": 5
-				},
-				"66":
-				{
-					"group": 0,
-					"index": 4
+					"index": 2
 				}
 			},
 			"restore_layout":
@@ -603,7 +850,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 267.0,
+	"side_bar_width": 299.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

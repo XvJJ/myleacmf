@@ -11,15 +11,26 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">会议室</label>
                 <div class="layui-input-inline">
-                    <select name="cate" class="form-control input-sm" lay-verify="required">
+                    <select name="room" class="form-control input-sm" lay-verify="required">
                         <option value=""></option>
-                        <notempty name="cate">
-                            <volist name="cate" id="vo">
-                                <option value="{$key}" <php>if(isset($info)&&$info['cate']==$key):echo 'selected="selected"';endif;</php>
-                                    <php>if(!isset($info) && 2==$key ):echo 'selected="selected"';endif;</php>>{$vo}</option>
+                        <notempty name="roomList">
+                            <volist name="roomList" id="vo">
+                                <option value="{$vo.id}" <php>if(isset($info)&&$info['room']==$key):echo 'selected="selected"';endif;</php>>{$vo.name}</option>
                             </volist>
                         </notempty>
                     </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <lable class="layui-form-label">开始时间</lable>
+                <div class="layui-input-block">
+                    <input type="text" name="start_time" placeholder="" lay-verify="required" value="{$info.start_time|default=''}" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <lable class="layui-form-label">占用时间</lable>
+                <div class="layui-input-block">
+                    <input type="text" name="takeup_time" placeholder="" lay-verify="required" value="{$info.takeup_time|default=''}" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -35,17 +46,11 @@
                     <input type="radio" name="status" value="0" title="下架" <php>if(isset($info)&&$info['status']==0):echo 'checked';endif</php>>
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">详情</label>
-                <div class="layui-input-block">
-                    <textarea id="content" name="content" style="display: none;">{$info.content|default=""}</textarea>
-                </div>
-            </div>
             <input type="hidden" name="id" value="{$info.id|default=''}">
-            <input type="hidden" name="cate_id" value="{$info.cate_id|default='1'}">
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="btn btn-primary" lay-submit lay-filter="layform1" target="1"><i class="fa fa-save"></i> 保存</button>
+                    <button class="btn btn-primary" lay-submit lay-filter="layform1" target="1">
+                        <i class="fa fa-save"></i> 保存</button>
                     <button type="reset" class="btn btn-default" style="margin-left: 20px;">重置</button>
                 </div>
             </div>
@@ -54,57 +59,61 @@
 </block>
 <block name="script">
     <script type="text/javascript">
-    layui.use(['layer', 'element', 'form', 'layedit', 'upload'], function() {
-        var layedit = layui.layedit;
-        var form = layui.form;
-        var upload = layui.upload;
-        //执行实例
-        var uploadInst = upload.render({
-            elem: '#upload-single',
-            url: '{:url("file/upload",["type"=>"image"])}',
-            done: function(res) {
-                if (res.code == 0) {
-                    var input = this.item;
-                    $(input).closest('.layui-form-item').find('.timeline-body').html('<div class="img"><a class="btn btn-xs"><i class="fa fa-trash"></i></a><img src="' + res.data.src + '" class="img-responsive" ><input type="hidden" name="cover_id" value="' + res.data.id + '"></div>')
-                } else {
-                    layer.msg(res.msg);
-                }
-            }
-        });
-
-        layedit.set({
-            uploadImage: {
-                url: '{:url("file/upload",["type"=>"image"])}'
-            }
-        });
-        var index = layedit.build('content'); //建立编辑器
-
-        //监听提交
-        form.on('submit(layform1)', function(data) {
-            layedit.sync(index)
-            var target = $(data.elem).attr('target') || 0;
-            $.post(data.form.action, $('#goods-form').serialize(), function(res) {
-                if (res.code == 1) {
-                    layer.msg(res.msg, {
-                        time: 1000,
-                        icon: 6
-                    }, function() {
-                        layer.close(index);
-                        window.location.href = res.url;
-                    });
-                } else {
-                    var str = res.msg || '服务器异常';
-                    layer.msg(str, {
-                        time: 1500,
-                        icon: 5
-                    });
+        layui.use(['layer', 'element', 'form', 'layedit', 'upload'], function () {
+            var layedit = layui.layedit;
+            var form = layui.form;
+            var upload = layui.upload;
+            //执行实例
+            var uploadInst = upload.render({
+                elem: '#upload-single',
+                url: '{:url("file/upload",["type"=>"image"])}',
+                done: function (res) {
+                    if (res.code == 0) {
+                        var input = this.item;
+                        $(input).closest('.layui-form-item').find('.timeline-body').html(
+                            '<div class="img"><a class="btn btn-xs"><i class="fa fa-trash"></i></a><img src="' +
+                            res.data.src +
+                            '" class="img-responsive" ><input type="hidden" name="cover_id" value="' +
+                            res.data.id + '"></div>')
+                    } else {
+                        layer.msg(res.msg);
+                    }
                 }
             });
-            return false;
+
+            layedit.set({
+                uploadImage: {
+                    url: '{:url("file/upload",["type"=>"image"])}'
+                }
+            });
+            var index = layedit.build('content'); //建立编辑器
+
+            //监听提交
+            form.on('submit(layform1)', function (data) {
+                layedit.sync(index)
+                var target = $(data.elem).attr('target') || 0;
+                $.post(data.form.action, $('#goods-form').serialize(), function (res) {
+                    if (res.code == 1) {
+                        layer.msg(res.msg, {
+                            time: 1000,
+                            icon: 6
+                        }, function () {
+                            layer.close(index);
+                            window.location.href = res.url;
+                        });
+                    } else {
+                        var str = res.msg || '服务器异常';
+                        layer.msg(str, {
+                            time: 1500,
+                            icon: 5
+                        });
+                    }
+                });
+                return false;
+            });
+            $('#goods-form').on('click', '.img a.btn', function () {
+                $(this).closest('.img').remove();
+            });
         });
-        $('#goods-form').on('click', '.img a.btn', function() {
-            $(this).closest('.img').remove();
-        });
-    });
     </script>
 </block>

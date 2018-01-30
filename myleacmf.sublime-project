@@ -1,14 +1,9 @@
 {
-    "folders":
-    [
-        {
-            "follow_symlinks": true,
-            "path": "/D/wamp64/www/myleacmf"
-        }
-    ],
-    "settings": {
-        "xdebug": {
-             "url": "http://cmf.com",
-        }
-    }
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://cmf.com"
+		}
+	}
 }
