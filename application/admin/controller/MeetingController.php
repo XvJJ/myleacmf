@@ -37,6 +37,10 @@ class MeetingController extends CommonController
         $model = DB::name('meeting')->where('status', 'in', [0, 1]);
         $meetings = $model->order('id desc')->paginate(10);
         $list = $meetings->getCollection()->toArray();
+        foreach ($list as $key ) {
+            $start_time = date('Y-m-d h:i', $key['start_time']);
+            $key['start_time'] = $start_time;
+        }
         $this->assign('list', $lists);
         return view();
     }
@@ -66,8 +70,22 @@ class MeetingController extends CommonController
     public function edit()
     {
         if ($this->request->isPost()) {
-            # code...
+            $Meet = new Meet();
+            $post = $this->request->post();
+            if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
+                $this->error($Meet->getError());
+            }
+            $this->success('修改成功', url('index'));
+        } else {
+            $id = $this->request->get('id', 0, 'intval');
+            if (!$id) {
+                $this->error('会议不存在');
+            }
+            $info = Meet::get($id);
+            $this->assign('info', $info);
+            return view();
         }
+
     }
 
     public function del()
