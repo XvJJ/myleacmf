@@ -2,49 +2,52 @@
     <thead>
         <tr>
             <th style="width: 48px">#</th>
-            <th>创建人ID</th>
-            <th style="width:400px">会议名称</th>            
+            <th style="width:300px">会议名称</th>
             <th>会议室</th>
             <th>开始时间</th>
             <th>占用时间</th>
-            <th>备注</th>
-            <th>操作</th>
+            <th>状态</th>
+            <th style="width:300px">备注</th>
+            <th style="width:120px;">操作</th>
         </tr>
     </thead>
     <tbody>
-        <volist name="list" id="vo">
-            <tr>
-                <td class="">{$vo.id}</td>
-                <td>
-                    <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:400px;" title="{$vo.name}">{$vo.name}</div>
-                </td>
-                <td>
-                    {$user[$vo.create_id]|default=''}
-                </td>
-                <td>
-                    <code>
-                        <a href="{$Request.domain}/view/{$vo.id}" class="iframe" data-width="480px">{$Request.domain}/view/{$vo.id}</a>
-                    </code>
-                </td>
-                <td>{$vo.start_time|date="Y-m-d H:i",###}</td>
-                <td>
-                    <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0">
-                        <span class="{$vo.status?'text-yellow':'text-muted'}">
-                            <i class="fa fa-circle"></i> {$vo.status?'上架':'下架'}</span>
-                    </a>
-                </td>
-                <td>
-                    <div class="text-left">
-                        <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改">
-                            <i class="fa fa-edit"></i> 修改</a>
-                        <neq name="vo.cate" value="1">
+        <notempty name="list">
+            <volist name="list" id="vo">
+                <tr>
+                    <td class="">{$vo.id}</td>
+                    <td>
+                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:300px;" title="{$vo.title}">{$vo.title}</div>
+                    </td>
+                    <td>
+                        <php>
+                            foreach($room as $key){
+                                if($key['id'] == $vo['room']){
+                                    echo $key['name'];
+                                }
+                            }
+                        </php>
+                    </td>
+                    <td>{$vo.start_time|date="Y-m-d H:i",###}</td>
+                    <td>{$vo.takeup_time}</td>
+                    <td>
+                        <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0">
+                            <span class="{$vo.status?'text-yellow':'text-muted'}">
+                                <i class="fa fa-circle"></i> {$vo.status?'上架':'下架'}</span>
+                        </a>
+                    </td>
+                    <td>{$vo.remark}</td>
+                    <td>
+                        <div class="text-left">
+                            <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改">
+                                <i class="fa fa-edit"></i> 修改</a>
                             <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get">
                                 <i class="fa fa-trash"></i> 删除</a>
-                        </neq>
-                    </div>
-                </td>
-            </tr>
-        </volist>
+                        </div>
+                    </td>
+                </tr>
+            </volist>
+        </notempty>
     </tbody>
 </table>
 <div class="pull-right">

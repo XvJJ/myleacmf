@@ -547,8 +547,25 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/D/wamp64/www/myleacmf",
+		"/D/wamp64/www/myleacmf/application",
+		"/D/wamp64/www/myleacmf/application/admin",
+		"/D/wamp64/www/myleacmf/application/admin/controller",
+		"/D/wamp64/www/myleacmf/application/admin/model",
+		"/D/wamp64/www/myleacmf/application/admin/view",
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting"
+	],
 	"file_history":
 	[
+		"/D/wamp64/www/myleacmf/application/admin/view/meeting/lists.html",
+		"/F/任务/20180130缙云搜狗站加弹窗/index.html",
+		"/F/任务/20180131万厚专家咨询页面错误/jsnre.njgbyy.com/style.css",
+		"/F/任务/20180131万厚专家咨询页面错误/jsnre.jswhgb.com/style.css",
+		"/F/任务/20180131万厚专家咨询页面错误/jsnre.njgb120.com/style.css",
+		"/F/任务/20180131万厚专家咨询页面错误/jsnre.gbyy120.com/style.css",
+		"/F/任务/20180131万厚专家咨询页面错误/jsnre.njwhgb.com/style.css",
 		"/F/任务/20180130缙云搜狗站加弹窗/sgfk.jyhwyy.com/zuidi.js",
 		"/F/任务/20180130缙云搜狗站加弹窗/sgfk.jyhwyy.com/tc.js",
 		"/F/任务/20180130缙云搜狗站加弹窗/sgnk.jyhwyy.com/dbtczx.js",
@@ -669,18 +686,11 @@
 		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public.css",
 		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public备份.css",
 		"/D/wamp64/www/njgbyy/templets/default/css/head.css",
-		"/D/wamp64/www/njgbyy/templets/default/yuyue.htm",
-		"/D/wamp64/www/njgbyy/templets/default/footer.htm",
-		"/F/DedeCMS-V5.7-UTF8-SP1/uploads/templets/default/article_article.htm",
-		"/F/专题/TouchSlide1.1-00/demo/3.4sohuFocus.html",
-		"/D/wamp64/www/njgbyy/templets/default/css/global.mobile.css",
-		"/D/wamp64/www/njgbyy/templets/default/js/bottom.js",
-		"/D/wamp64/www/njgbyy/templets/default/css/footer.css",
-		"/D/wamp64/www/njgbyy/templets/default/js/public.js"
+		"/D/wamp64/www/njgbyy/templets/default/yuyue.htm"
 	],
 	"find":
 	{
-		"height": 45.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{

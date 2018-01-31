@@ -15,21 +15,7 @@ class MeetingController extends CommonController
 
     public function index()
     {
-        // if ($this->request->isAjax) {
-        //     $keyword = $this->request->post('keyword', '', 'trim');
-
-        //     $model = Db::name('meeting')->where('status', 'in', '0,1');
-        //     if ($keyword) {
-        //         $model->where('title', 'like', '%d' . $keyword . '%');
-        //     }
-
-        //     $list = $model->order('id desc')->paginate(10);
-        //     return view('index-list', [
-        //         'list' => $list,
-        //     ]);
-        // } else {
         return view();
-        // }
     }
 
     public function lists()
@@ -37,15 +23,12 @@ class MeetingController extends CommonController
         $model = Db::name('meeting')->where('status', 'in', [0, 1]);
         $meetings = $model->order('id desc')->paginate(10);
         $list = $meetings->getCollection()->toArray();
-        $user = Db::name('admin')->where('status',1)->order('id desc')->select();
-        // $timeList = array();
-        // foreach ($list as $key) {
-        //     $start_time = date('Y-m-d h:i', $key['start_time']);
-        //     array_push($timeList, $start_time);
-        // }
-        $this->assign('lists', $lists);
-        $this->assign('lists',$user);
-        $this->assign('lists', $timeList);
+        // $user = Db::name('admin')->where('status', 1)->column('nickname');
+        // $room = Db::name('room')->column('name');
+        $room = self::getRoomList();
+        $this->assign('room', $room);
+        $this->assign('list', $list);
+        // $this->assign('user', $user);
         return view();
     }
 
@@ -74,7 +57,7 @@ class MeetingController extends CommonController
     public function edit()
     {
         if ($this->request->isPost()) {
-            $Meet = new Meet();
+            $Meet = new Meeting();
             $post = $this->request->post();
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());
@@ -85,15 +68,37 @@ class MeetingController extends CommonController
             if (!$id) {
                 $this->error('会议不存在');
             }
-            $info = Meet::get($id);
+            $info = Meeting::get($id);
+            $roomList = self::getRoomList();
+            $this->assign('roomList', $roomList);
             $this->assign('info', $info);
             return view();
         }
 
     }
 
-    public function del()
+    /**
+     * 设置状态
+     * @return json
+     */
+    public function setStatus()
     {
+        $id = $this->request->get('id', 0, 'intval');
+        $status = $this->request->get('status', 0, 'intval');
+
+        if ($id > 0 && (new Meeting())->where('id', $id)->update(['status' => $status]) !== false) {
+            $this->success('设置成功');
+        }
+        $this->error('更新失败');
+    }
+
+    public function delete()
+    {
+        $id = $this->request->get('id', 0, 'intval');
+        if ($id > 0 && Db::name('room')->where('id', $id)->setField('status', 2) !== false) {
+            $this->success('删除成功');
+        }
+        $this->error('删除失败');
 
     }
 
@@ -103,7 +108,12 @@ class MeetingController extends CommonController
      */
     public function getRoomList()
     {
-        $list = Db::name('room')->where('status', 'in', [0, 1])->order('id desc')->select();
+        $list = Db::name('room')->where('status', 'in', [0, 1])->select();
+        return $list;
+    }
+    public function getRoomNameList()
+    {
+        $list = Db::name('room')->column('id','name');
         return $list;
     }
 }
