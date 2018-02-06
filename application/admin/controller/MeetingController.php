@@ -47,6 +47,13 @@ class MeetingController extends CommonController
             $post = $this->request->post();
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
+            if (!self::isInUse($post)) {
+                $roomList = self::getRoomList();
+                $this->assign('roomList', $roomList);
+                $this->assign('info', $post);
+                return view('edit');
+
+            }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
             }
@@ -138,11 +145,12 @@ class MeetingController extends CommonController
         $start_time = $post['start_time'];
         $end_time = $start_time + $post['use_time'] * 60 * 60;
         $list = Db::name('meeting')->where('status', '1')->where('room', $post['room'])->select();
-        if (isEmpty($list)) {
+        if (empty($list)) {
             return true;
         }
-        foreach ($list as $key) {
-            
+        foreach ($list as $value) {
+            $start_t = $value['start_time'];
+            $end_t = $start_t + $value['use_time'] * 60 * 60;
         }
         return true;
     }
