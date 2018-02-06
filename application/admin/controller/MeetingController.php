@@ -18,6 +18,10 @@ class MeetingController extends CommonController
         return view();
     }
 
+    /**
+     * 会议列表
+     */
+
     public function lists()
     {
         $model = Db::name('meeting')->where('status', 'in', [0, 1]);
@@ -54,6 +58,11 @@ class MeetingController extends CommonController
         }
     }
 
+    /***
+     *  编辑页面和编辑操作
+     * @return mixed
+     */
+
     public function edit()
     {
         if ($this->request->isPost()) {
@@ -79,7 +88,6 @@ class MeetingController extends CommonController
 
     /**
      * 设置状态
-     * @return json
      */
     public function setStatus()
     {
@@ -91,6 +99,10 @@ class MeetingController extends CommonController
         }
         $this->error('更新失败');
     }
+
+    /**
+     * 删除会议
+     */
 
     public function delete()
     {
@@ -113,7 +125,25 @@ class MeetingController extends CommonController
     }
     public function getRoomNameList()
     {
-        $list = Db::name('room')->column('id','name');
+        $list = Db::name('room')->column('id', 'name');
         return $list;
+    }
+
+    /**
+     * 判断该会议室在该时间段是否被占用
+     * @return bool
+     */
+    public function isInUse($post)
+    {
+        $start_time = $post['start_time'];
+        $end_time = $start_time + $post['use_time'] * 60 * 60;
+        $list = Db::name('meeting')->where('status', '1')->where('room', $post['room'])->select();
+        if (isEmpty($list)) {
+            return true;
+        }
+        foreach ($list as $key) {
+            
+        }
+        return true;
     }
 }

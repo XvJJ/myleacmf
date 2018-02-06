@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : wampLocalhost
+ Source Server         : wampserver
  Source Server Type    : MySQL
  Source Server Version : 50714
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 30/01/2018 16:50:27
+ Date: 06/02/2018 21:19:43
 */
 
 SET NAMES utf8mb4;
@@ -286,19 +286,19 @@ CREATE TABLE `meeting`  (
   `create_aid` int(11) UNSIGNED DEFAULT 0 COMMENT '创建人',
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议名称',
   `room` int(11) NOT NULL DEFAULT 0 COMMENT '会议室编号',
-  `start_time` int(60) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
-  `takeup_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '占用时间 以半小时为单位',
+  `start_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
+  `use_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '占用时间 以半小时为单位',
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of meeting
 -- ----------------------------
-INSERT INTO `meeting` VALUES (1, 1, '会议1', 2, 1517277600, 30, '123', 1517299564, 1517299564, 1);
+INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1519215060, 1, '', 1517919081, 1517919081, 1);
 
 -- ----------------------------
 -- Table structure for msg
@@ -331,13 +331,14 @@ CREATE TABLE `room`  (
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态 0-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of room
 -- ----------------------------
-INSERT INTO `room` VALUES (1, 1, '123', '123', '', 1);
+INSERT INTO `room` VALUES (1, 1, '123', '123', '', 2);
 INSERT INTO `room` VALUES (2, 1, '会议室1', '一楼', '有座位', 1);
+INSERT INTO `room` VALUES (3, 1, '会议室2', '二楼', '有空调', 1);
 
 -- ----------------------------
 -- Table structure for setting

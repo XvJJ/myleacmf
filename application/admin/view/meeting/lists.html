@@ -2,13 +2,13 @@
     <thead>
         <tr>
             <th style="width: 48px">#</th>
-            <th style="width:300px">会议名称</th>
-            <th>会议室</th>
-            <th>开始时间</th>
-            <th>占用时间</th>
-            <th>状态</th>
+            <th style="width:200px">会议名称</th>
+            <th style="width:120px">会议室</th>
+            <th style="width:150px">开始时间</th>
+            <th style="width:100px">占用时间</th>
+            <th style="width: 48px">状态</th>
             <th style="width:300px">备注</th>
-            <th style="width:120px;">操作</th>
+            <th style="width:150px;">操作</th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
                         </php>
                     </td>
                     <td>{$vo.start_time|date="Y-m-d H:i",###}</td>
-                    <td>{$vo.takeup_time}</td>
+                    <td>{$vo.use_time}</td>
                     <td>
                         <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0">
                             <span class="{$vo.status?'text-yellow':'text-muted'}">
