@@ -412,7 +412,7 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "insta",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -547,18 +547,25 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/D/wamp64/www/myleacmf",
-		"/D/wamp64/www/myleacmf/application",
-		"/D/wamp64/www/myleacmf/application/admin",
-		"/D/wamp64/www/myleacmf/application/admin/controller",
-		"/D/wamp64/www/myleacmf/application/admin/model",
-		"/D/wamp64/www/myleacmf/application/admin/view",
-		"/D/wamp64/www/myleacmf/application/admin/view/meeting"
-	],
 	"file_history":
 	[
+		"/F/任务/20180206泰州东方皮肤pc新模板/皮肤/皮肤首页.psd",
+		"/D/wamp64/www/jyhwyl/templets/default/index_article_baike.htm",
+		"/D/wamp64/www/jyhwyl/templets/default/list_article_keshi.htm",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/HTMLBeautify/HTMLBeautify.sublime-settings",
+		"/F/专题/index.html",
+		"/D/wamp64/www/jyhwyl/templets/default/index.htm",
+		"/F/专题/gundong.js",
+		"/F/专题/swt.js",
+		"/D/wamp64/www/jyhwyl/templets/default/index_demo.htm",
+		"/F/任务/20180202泰州东方皮肤/www.tzpfyy.cn/index.html",
+		"/F/任务/20180202泰州东方皮肤/www.tzpfyy.cn/foot.html",
+		"/D/wamp64/www/jyhwyl/js/main.js",
+		"/D/wamp64/www/jyhwyl/dede/catalog_add.php",
+		"/D/wamp64/www/jyhwyl/model/common.inc.php",
+		"/D/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf",
+		"/F/专题/dateTimePicker-1-master/demo/index.html",
+		"/F/专题/datetimepicker-master/datetimepicker-master/index.html",
 		"/D/wamp64/www/myleacmf/application/admin/view/meeting/lists.html",
 		"/F/任务/20180130缙云搜狗站加弹窗/index.html",
 		"/F/任务/20180131万厚专家咨询页面错误/jsnre.njgbyy.com/style.css",
@@ -573,12 +580,10 @@
 		"/D/wamp64/www/myleacmf/thinkphp/library/think/Error.php",
 		"/D/wamp64/www/myleacmf/data/backup/meeting.sql",
 		"/D/wamp64/www/myleacmf/thinkphp/library/think/App.php",
-		"/F/专题/index.html",
 		"/D/wamp64/www/myleacmf/application/admin/view/meeting/index.html",
 		"/F/任务/20180129丹阳春节妇科专题1.26/cjfk/index.html",
 		"/D/wamp64/bin/apache/apache2.4.23/bin/php.ini",
 		"/D/wamp64/www/myleacmf/myleacmf.sublime-project",
-		"/D/wamp64/bin/apache/apache2.4.23/conf/extra/httpd-vhosts.conf",
 		"/F/任务/20180129丹阳春节妇科专题1.26/cjfk/css/style.css",
 		"/D/wamp64/www/njgbyy/templets/default/index.htm",
 		"/D/wamp64/www/njgbyy/templets/default/css/index.css",
@@ -671,22 +676,7 @@
 		"/F/任务/20180126六合新棠加百度代码/m.lhxtnk.com/swtdlj.js",
 		"/D/wamp64/www/myleacmf/data/backup/leacmf0126.sql",
 		"/F/任务/FIN-20180125南京万厚风湿网站病种导航修改/head.htm",
-		"/F/任务/FIN-20180125南京万厚风湿网站病种导航修改/0public.css",
-		"/C/Users/Administrator/Downloads/pac.txt",
-		"/E/shadowsocksR/pac.txt",
-		"/E/shadowsocksR/user.rule",
-		"/D/wamp64/www/myleacmf/data/backup/meeting备份.sql",
-		"/D/wamp64/www/myleacmf/data/backup/meeting.sql.dump",
-		"/F/任务/20180125六合新棠新年专题复制/xndfj/index.html",
-		"/D/wamp64/www/njgbyy/templets/default/head.htm",
-		"/D/wamp64/www/njgbyy/templets/default/js/top.js",
-		"/D/wamp64/www/myleacmf/application/home/controller/IndexController.php",
-		"/D/wamp64/www/njgbyy/templets/default/list.htm",
-		"/F/任务/20180125南京万厚风湿网站病种导航修改/head.htm",
-		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public.css",
-		"/F/任务/20180125南京万厚风湿网站病种导航修改/0public备份.css",
-		"/D/wamp64/www/njgbyy/templets/default/css/head.css",
-		"/D/wamp64/www/njgbyy/templets/default/yuyue.htm"
+		"/F/任务/FIN-20180125南京万厚风湿网站病种导航修改/0public.css"
 	],
 	"find":
 	{

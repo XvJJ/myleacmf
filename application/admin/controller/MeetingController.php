@@ -51,8 +51,8 @@ class MeetingController extends CommonController
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
-                return view('edit');
-
+                // return view('edit');
+                $this->warning('此会议室该时间段被占用', url('edit'));
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
@@ -151,6 +151,12 @@ class MeetingController extends CommonController
         foreach ($list as $value) {
             $start_t = $value['start_time'];
             $end_t = $start_t + $value['use_time'] * 60 * 60;
+            if ($end_time < $end_t && $end_time > $start_t) {
+                return false;
+            }
+            if ($start_time < $end_t && $start_time > $start_t) {
+                return false;
+            }
         }
         return true;
     }
