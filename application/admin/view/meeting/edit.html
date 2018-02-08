@@ -24,16 +24,16 @@
             <div class="layui-form-item">
                 <lable class="layui-form-label">开始时间</lable>
                 <div class="layui-input-block">
-                    <input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>"
-                        class="layui-input">
+                    <input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>" class="layui-input">
                 </div>
                 <script type="text/javascript">
-                    $('#start_time').dateTimePicker({
-                        mode: 'dateTime',
-                        format: 'yyyy-MM-dd HH:mm',
-                        // limitMin: '2017-03-10 08:00:00',
-                        // limitMax: '2017-03-20 08:00:00'
-                    });
+                laydate.render({
+                    elem: '#start_time',
+                    type: 'datetime',
+                    format: 'yyyy-MM-dd HH:mm',
+                    min: 0,
+                    max: 14
+                });
                 </script>
             </div>
             <div class="layui-form-item">

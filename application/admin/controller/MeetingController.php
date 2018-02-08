@@ -52,7 +52,8 @@ class MeetingController extends CommonController
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
                 // return view('edit');
-                $this->warning('此会议室该时间段被占用', url('edit'));
+                $this->success('此会议室该时间段被占用', url('edit'));
+                return false;
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
@@ -75,6 +76,8 @@ class MeetingController extends CommonController
         if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
+            $start_time = $post['start_time'];
+            $post['start_time'] = strtotime($start_time);
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());
             }
@@ -130,6 +133,11 @@ class MeetingController extends CommonController
         $list = Db::name('room')->where('status', 'in', [0, 1])->select();
         return $list;
     }
+
+    /**
+     * 获取会议室名称列表
+     * @return array
+     */
     public function getRoomNameList()
     {
         $list = Db::name('room')->column('id', 'name');
