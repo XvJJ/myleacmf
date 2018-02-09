@@ -7,8 +7,6 @@ use think\Request;
 
 class MeetingController extends CommonController
 {
-    static $isRoomInUse = false;
-
     public function _initialize()
     {
         parent::_initialize();
@@ -48,16 +46,16 @@ class MeetingController extends CommonController
             $post = $this->request->post();
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
-            if (!self::isInUse($post)) {
-                self::$isRoomInUse = true;
-                $roomList = self::getRoomList();
-                $this->assign('roomList', $roomList);
-                $this->assign('info', $post);
-                // return view('edit');
-                $this->success('此会议室该时间段被占用', url('edit'));
-            }
+
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
+            }
+            if (!self::isInUse($post)) {
+                if (session('?inUsePost')) {
+                    session('inUsePost', null);
+                }
+                session('inUsePost', $post);
+                $this->success('此会议室该时间段被占用', url('edit'));
             }
             $this->success('新增成功', url('index'));
         } else {
@@ -74,10 +72,6 @@ class MeetingController extends CommonController
 
     public function edit()
     {
-        if (self::$isRoomInUse) {
-            self::$isRoomInUse = !self::$isRoomInUse;
-            return view();
-        }
         if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
@@ -86,7 +80,21 @@ class MeetingController extends CommonController
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());
             }
+            if (!self::isInUse($post)) {
+                if (session('?inUsePost')) {
+                    session('inUsePost', null);
+                }
+                session('inUsePost', $post);
+                $this->success('此会议室该时间段被占用', url('edit'));
+            }
             $this->success('修改成功', url('index'));
+        } else if (session('?inUsePost')) {
+            $post = session('inUsePost');
+            session('inUsePost', null);
+            $roomList = self::getRoomList();
+            $this->assign('roomList', $roomList);
+            $this->assign('info', $post);
+            return view();
         } else {
             $id = $this->request->get('id', 0, 'intval');
             if (!$id) {
