@@ -7,6 +7,7 @@ use think\Request;
 
 class MeetingController extends CommonController
 {
+    static $isRoomInUse = false;
 
     public function _initialize()
     {
@@ -48,12 +49,12 @@ class MeetingController extends CommonController
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
             if (!self::isInUse($post)) {
+                self::$isRoomInUse = true;
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
                 // return view('edit');
                 $this->success('此会议室该时间段被占用', url('edit'));
-                return false;
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
@@ -73,6 +74,10 @@ class MeetingController extends CommonController
 
     public function edit()
     {
+        if (self::$isRoomInUse) {
+            self::$isRoomInUse = !self::$isRoomInUse;
+            return view();
+        }
         if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
@@ -117,7 +122,7 @@ class MeetingController extends CommonController
     public function delete()
     {
         $id = $this->request->get('id', 0, 'intval');
-        if ($id > 0 && Db::name('room')->where('id', $id)->setField('status', 2) !== false) {
+        if ($id > 0 && Db::name('meeting')->where('id', $id)->setField('status', 2) !== false) {
             $this->success('删除成功');
         }
         $this->error('删除失败');
