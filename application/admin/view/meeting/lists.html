@@ -3,12 +3,12 @@
         <tr>
             <th style="width: 48px">#</th>
             <th style="width:200px">会议名称</th>
-            <th style="width:120px">会议室</th>
+            <th style="width:150px">会议室</th>
             <th style="width:150px">开始时间</th>
             <th style="width:100px">占用时间</th>
-            <th style="width: 48px">状态</th>
+            <th style="width:100px">状态</th>
             <th style="width:300px">备注</th>
-            <th style="width:150px;">操作</th>
+            <th>操作</th>
         </tr>
     </thead>
     <tbody>
@@ -17,24 +17,18 @@
                 <tr>
                     <td class="">{$vo.id}</td>
                     <td>
-                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:300px;" title="{$vo.title}">{$vo.title}</div>
+                        <div style="text-align:left;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;width:150px;" title="{$vo.title}">{$vo.title}</div>
                     </td>
                     <td>
                         <php>
-                            foreach($room as $key){
-                                if($key['id'] == $vo['room']){
-                                    echo $key['name'];
-                                }
-                            }
+                            foreach($room as $key){ if($key['id'] == $vo['room']){ echo $key['name']; } }
                         </php>
                     </td>
                     <td>{$vo.start_time|date="Y-m-d H:i",###}</td>
-                    <td>{$vo.use_time}</td>
+                    <td>{$vo.use_time}小时</td>
                     <td>
-                        <!-- <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>(1-$vo['status'])])}" class="ajax-get" msg="0"> -->
-                            <span class="{$vo.status?'text-yellow':'text-muted'}">
-                                <i class="fa fa-circle"></i> {$vo.status?'上架':'下架'}</span>
-                        <!-- </a> -->
+                        <span class="{$vo.status?'text-yellow':'text-muted'}">
+                            <i class="fa fa-circle"></i> {$vo.status?'上架':'下架'}</span>
                     </td>
                     <td>{$vo.remark}</td>
                     <td>
