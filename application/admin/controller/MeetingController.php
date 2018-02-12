@@ -14,30 +14,29 @@ class MeetingController extends CommonController
 
     public function index()
     {
+        if (!self::deleteOutDateMeeting()) {
+            $this->error('删除过期会议失败');
+        }
         return view();
     }
 
     /**
      * 会议列表
      */
-
     public function lists()
     {
         $model = Db::name('meeting')->where('status', 'in', [0, 1]);
         $meetings = $model->order('id desc')->paginate(10);
         $list = $meetings->getCollection()->toArray();
-        // $user = Db::name('admin')->where('status', 1)->column('nickname');
-        // $room = Db::name('room')->column('name');
         $room = self::getRoomList();
         $this->assign('room', $room);
         $this->assign('list', $list);
-        // $this->assign('user', $user);
         return view();
     }
 
-    /***
-     *   添加页面和添加操作
-     *   @return mixed
+    /**
+     * 添加页面和添加操作
+     * @return mixed
      */
     public function add()
     {
@@ -65,8 +64,8 @@ class MeetingController extends CommonController
         }
     }
 
-    /***
-     *  编辑页面和编辑操作
+    /**
+     * 编辑页面和编辑操作
      * @return mixed
      */
 
@@ -77,15 +76,15 @@ class MeetingController extends CommonController
             $post = $this->request->post();
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
-            if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
-                $this->error($Meet->getError());
-            }
             if (!self::isInUse($post)) {
                 if (session('?inUsePost')) {
                     session('inUsePost', null);
                 }
                 session('inUsePost', $post);
                 $this->success('此会议室该时间段被占用', url('edit'));
+            }
+            if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
+                $this->error($Meet->getError());
             }
             $this->success('修改成功', url('index'));
         } else if (session('?inUsePost')) {
@@ -110,14 +109,15 @@ class MeetingController extends CommonController
     }
 
     /**
-     * 设置状态
+     * 快速禁用
+     * @return json
      */
     public function setStatus()
     {
         $id = $this->request->get('id', 0, 'intval');
         $status = $this->request->get('status', 0, 'intval');
 
-        if ($id > 0 && (new Meeting())->where('id', $id)->update(['status' => $status]) !== false) {
+        if ($id > 0 && Db::name('meeting')->where('id', $id)->update(['status' => $status]) !== false) {
             $this->success('设置成功');
         }
         $this->error('更新失败');
@@ -125,6 +125,7 @@ class MeetingController extends CommonController
 
     /**
      * 删除会议
+     * @return json
      */
 
     public function delete()
@@ -165,7 +166,12 @@ class MeetingController extends CommonController
     {
         $start_time = $post['start_time'];
         $end_time = $start_time + $post['use_time'] * 60 * 60;
-        $list = Db::name('meeting')->where('status', '1')->where('room', $post['room'])->select();
+        $model = Db::name('meeting');
+        if (isset($post['id'])) {
+            $id = $post['id'];
+            $model = $model->where('id', 'NEQ', $id);
+        }
+        $list = $model->where('status', '1')->where('room', $post['room'])->select();
         if (empty($list)) {
             return true;
         }
@@ -177,6 +183,25 @@ class MeetingController extends CommonController
             }
             if ($start_time < $end_t && $start_time > $start_t) {
                 return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 将过期的会议下架
+     * @return bool
+     */
+    public function deleteOutDateMeeting()
+    {
+        $date = time();
+        $list = Db::name('meeting')->where('status', '1')->select();
+        foreach ($list as $value) {
+            $id = $value['id'];
+            if ($value['start_time'] <= $date) {
+                if (Db::name('meeting')->where('id', $id)->setField('status', 0) == false) {
+                    return false;
+                }
             }
         }
         return true;

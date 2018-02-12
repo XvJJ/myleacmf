@@ -25,11 +25,16 @@
                 </td>
                 <td>{$vo.register_time}</td>
                 <td>
-                    <div class="text-right"><a href="{:url('balance',['id'=>$vo['id']])}" class="ajax-show text-blue" title="消费明细">{$vo.balance}</a></div>
+                    <div class="text-right">
+                        <a href="{:url('balance',['id'=>$vo['id']])}" class="ajax-show text-blue" title="消费明细">{$vo.balance}</a>
+                    </div>
                 </td>
                 <td>
                     <div class="text-center">
-                        <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0"><span class="{$vo.status?'text-yellow':'text-muted'}"><i class="fa fa-circle"></i> {$vo.status?'启用':'禁用'}</span></a>
+                        <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0">
+                            <span class="{$vo.status?'text-yellow':'text-muted'}">
+                                <i class="fa fa-circle"></i> {$vo.status?'启用':'禁用'}</span>
+                        </a>
                     </div>
                 </td>
             </tr>
