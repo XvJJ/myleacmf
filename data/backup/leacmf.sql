@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 127.0.0.1
+ Source Server         : wampLocalhost
  Source Server Type    : MySQL
  Source Server Version : 50714
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 09/02/2018 22:18:58
+ Date: 14/02/2018 17:23:36
 */
 
 SET NAMES utf8mb4;
@@ -23,15 +23,15 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `ad`;
 CREATE TABLE `ad`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `type` tinyint(1) NULL DEFAULT NULL,
-  `title` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `picture` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `sort` smallint(5) NULL DEFAULT NULL,
-  `action_type` tinyint(1) NULL DEFAULT NULL,
-  `action_param` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `create_time` int(11) UNSIGNED NULL DEFAULT NULL,
-  `update_time` int(11) UNSIGNED NULL DEFAULT NULL,
+  `type` tinyint(1) DEFAULT NULL,
+  `title` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `picture` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `sort` smallint(5) DEFAULT NULL,
+  `action_type` tinyint(1) DEFAULT NULL,
+  `action_param` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `create_time` int(11) UNSIGNED DEFAULT NULL,
+  `update_time` int(11) UNSIGNED DEFAULT NULL,
   `status` int(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '0-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -52,10 +52,10 @@ CREATE TABLE `admin`  (
   `nickname` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '昵称',
   `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
   `face` int(10) NOT NULL DEFAULT 0,
-  `token` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'token',
+  `token` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'token',
   `login_times` int(10) NOT NULL DEFAULT 0 COMMENT '登录次数',
-  `last_login_time` int(10) NULL DEFAULT NULL COMMENT '上次登陆时间',
-  `last_login_ip` char(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上次登陆ip',
+  `last_login_time` int(10) DEFAULT NULL COMMENT '上次登陆时间',
+  `last_login_ip` char(16) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '上次登陆ip',
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '0-禁用 1-正常',
   `create_time` int(11) NOT NULL COMMENT '注册时间',
   PRIMARY KEY (`id`) USING BTREE
@@ -64,7 +64,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, 'eefdda296378bda84ae9d969afe95103', 692, 1518177725, '127.0.0.1', 1, 1);
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, 'b9a04ec433f653464b8a5890a5afbebd', 695, 1518423820, '127.0.0.1', 1, 1);
 INSERT INTO `admin` VALUES (2, 'manage', '管理员', 'd3e3aad7256f373a52a9cfb99bb54c98', 0, '9c1f396f25668e2b2322936c7e02e603', 47, 1504764750, '1.25.227.160', 1, 1496306374);
 
 -- ----------------------------
@@ -75,7 +75,7 @@ CREATE TABLE `article`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `cate` smallint(1) UNSIGNED NOT NULL COMMENT '1-系统单页 2-文章',
   `title` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `cover_id` int(11) UNSIGNED NULL DEFAULT NULL,
+  `cover_id` int(11) UNSIGNED DEFAULT NULL,
   `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `create_time` int(11) NOT NULL,
   `create_aid` smallint(5) NOT NULL,
@@ -110,10 +110,10 @@ DROP TABLE IF EXISTS `auth_group`;
 CREATE TABLE `auth_group`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '组名',
-  `rules` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '规则ID',
+  `rules` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT '规则ID',
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态',
   `sort` smallint(5) NOT NULL DEFAULT 0,
-  `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '分组表' ROW_FORMAT = Dynamic;
 
@@ -238,7 +238,7 @@ CREATE TABLE `config`  (
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `lock` tinyint(1) NOT NULL DEFAULT 1 COMMENT '状态',
-  `value` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '配置值',
+  `value` text CHARACTER SET utf8 COLLATE utf8_general_ci COMMENT '配置值',
   `sort` smallint(3) UNSIGNED NOT NULL DEFAULT 0 COMMENT '排序',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_name`(`name`) USING BTREE,
@@ -271,7 +271,7 @@ CREATE TABLE `jobs`  (
   `payload` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `attempts` tinyint(3) UNSIGNED NOT NULL,
   `reserved` tinyint(3) UNSIGNED NOT NULL,
-  `reserved_at` int(10) UNSIGNED NULL DEFAULT NULL,
+  `reserved_at` int(10) UNSIGNED DEFAULT NULL,
   `available_at` int(10) UNSIGNED NOT NULL,
   `created_at` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -283,12 +283,12 @@ CREATE TABLE `jobs`  (
 DROP TABLE IF EXISTS `meeting`;
 CREATE TABLE `meeting`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `create_aid` int(11) UNSIGNED NULL DEFAULT 0 COMMENT '创建人',
+  `create_aid` int(11) UNSIGNED DEFAULT 0 COMMENT '创建人',
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议名称',
   `room` int(11) NOT NULL DEFAULT 0 COMMENT '会议室编号',
   `start_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
   `use_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '占用时间 以半小时为单位',
-  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
+  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
@@ -298,11 +298,11 @@ CREATE TABLE `meeting`  (
 -- ----------------------------
 -- Records of meeting
 -- ----------------------------
-INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1518225060, 1, '', 1517919081, 1518177490, 1);
-INSERT INTO `meeting` VALUES (3, 1, '会议2', 2, 1518224400, 2, '', 1518177664, 1518177664, 1);
-INSERT INTO `meeting` VALUES (4, 1, '会议3', 2, 1518224400, 3, '', 1518180345, 1518180345, 1);
-INSERT INTO `meeting` VALUES (5, 1, '会议4', 2, 1518224400, 2, '', 1518180544, 1518180544, 1);
-INSERT INTO `meeting` VALUES (6, 1, '会议5', 2, 1518224400, 3, '', 1518180736, 1518180736, 1);
+INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1518225060, 1, '', 1517919081, 1518177490, 0);
+INSERT INTO `meeting` VALUES (3, 1, '会议2', 2, 1518656400, 2, '', 1518177664, 1518329453, 1);
+INSERT INTO `meeting` VALUES (4, 1, '会议3', 2, 1518656400, 3, '', 1518180345, 1518339185, 1);
+INSERT INTO `meeting` VALUES (5, 1, '会议4', 2, 1518224400, 2, '', 1518180544, 1518338700, 0);
+INSERT INTO `meeting` VALUES (6, 1, '会议5', 2, 1518224400, 3, '', 1518180736, 1518180736, 0);
 
 -- ----------------------------
 -- Table structure for msg
@@ -329,10 +329,10 @@ INSERT INTO `msg` VALUES (1, 0, 'test', '', 1507692726, 0);
 DROP TABLE IF EXISTS `room`;
 CREATE TABLE `room`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `create_aid` int(11) UNSIGNED NULL DEFAULT NULL COMMENT '创建人',
+  `create_aid` int(11) UNSIGNED DEFAULT NULL COMMENT '创建人',
   `name` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议室名称',
   `address` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议室地址',
-  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '备注',
+  `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态 0-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
@@ -351,7 +351,7 @@ DROP TABLE IF EXISTS `setting`;
 CREATE TABLE `setting`  (
   `name` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   UNIQUE INDEX `name`(`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -382,8 +382,8 @@ CREATE TABLE `sms`  (
   `type` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '短信类型： 1:注册  2:修改密码',
   `status` tinyint(1) NOT NULL COMMENT '发送状态  1:成功  2:失败',
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '发送内容',
-  `send_time` int(11) NULL DEFAULT NULL COMMENT '发送的时间',
-  `sms_ret_msg` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '发送短信的返回',
+  `send_time` int(11) DEFAULT NULL COMMENT '发送的时间',
+  `sms_ret_msg` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发送短信的返回',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '记录短信的发送历史' ROW_FORMAT = Dynamic;
 
@@ -437,14 +437,14 @@ DROP TABLE IF EXISTS `uploads`;
 CREATE TABLE `uploads`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '文件类型',
-  `ext` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件扩展名',
+  `ext` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '文件扩展名',
   `size` int(10) UNSIGNED NOT NULL,
-  `path` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `path` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `filename` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sha1` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `width` smallint(5) UNSIGNED NOT NULL DEFAULT 0,
   `height` smallint(5) UNSIGNED NOT NULL DEFAULT 0,
-  `mime` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `mime` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `at_time` int(10) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -471,17 +471,17 @@ INSERT INTO `uploads` VALUES (12, 'image', 'png', 7578, '20171011/30d385e003ce23
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `uuid` char(13) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `uuid` char(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `mobile` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '手机号',
   `nickname` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `openid` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '微信id',
-  `face` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
-  `sex` enum('男','女') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `occupation` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `openid` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '微信id',
+  `face` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '头像',
+  `sex` enum('男','女') CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `occupation` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `balance` decimal(15, 2) UNSIGNED NOT NULL DEFAULT 0.00 COMMENT '余额',
   `password` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `register_time` datetime(0) NOT NULL COMMENT '注册时间',
-  `update_time` int(11) NULL DEFAULT NULL COMMENT '更新时间',
+  `update_time` int(11) DEFAULT NULL COMMENT '更新时间',
   `status` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -507,7 +507,7 @@ CREATE TABLE `user_token`  (
   `token` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'token',
   `ip` char(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `time` datetime(0) NOT NULL COMMENT '登陆时间',
-  `agent` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'user_agent',
+  `agent` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user_agent',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '记录用户登陆情况' ROW_FORMAT = Dynamic;
 
