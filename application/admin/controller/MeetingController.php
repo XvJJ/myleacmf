@@ -53,6 +53,11 @@ class MeetingController extends CommonController
                 if (session('?inUsePost')) {
                     session('inUsePost', null);
                 }
+                if (empty($post['id'])) {
+                    $newMeeting = Db::name('meeting')->order('id desc')->select();
+                    $id = $newMeeting['0']['id'];
+                    $post['id'] = $id;
+                }
                 session('inUsePost', $post);
                 $this->success('此会议室该时间段被占用', url('edit'));
             }
@@ -71,7 +76,14 @@ class MeetingController extends CommonController
 
     public function edit()
     {
-        if ($this->request->isPost()) {
+        if (session('?inUsePost')) {
+            $post = session('inUsePost');
+            session('inUsePost', null);
+            $roomList = self::getRoomList();
+            $this->assign('roomList', $roomList);
+            $this->assign('info', $post);
+            return view();
+        } else if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
             $start_time = $post['start_time'];
@@ -87,13 +99,6 @@ class MeetingController extends CommonController
                 $this->error($Meet->getError());
             }
             $this->success('修改成功', url('index'));
-        } else if (session('?inUsePost')) {
-            $post = session('inUsePost');
-            session('inUsePost', null);
-            $roomList = self::getRoomList();
-            $this->assign('roomList', $roomList);
-            $this->assign('info', $post);
-            return view();
         } else {
             $id = $this->request->get('id', 0, 'intval');
             if (!$id) {
@@ -167,7 +172,7 @@ class MeetingController extends CommonController
         $start_time = $post['start_time'];
         $end_time = $start_time + $post['use_time'] * 60 * 60;
         $model = Db::name('meeting');
-        if (isset($post['id'])) {
+        if (isset($post['id']) && !empty($post['id'])) {
             $id = $post['id'];
             $model = $model->where('id', 'NEQ', $id);
         }
@@ -178,10 +183,10 @@ class MeetingController extends CommonController
         foreach ($list as $value) {
             $start_t = $value['start_time'];
             $end_t = $start_t + $value['use_time'] * 60 * 60;
-            if ($end_time < $end_t && $end_time > $start_t) {
+            if ($end_time <= $end_t && $end_time >= $start_t) {
                 return false;
             }
-            if ($start_time < $end_t && $start_time > $start_t) {
+            if ($start_time <= $end_t && $start_time >= $start_t) {
                 return false;
             }
         }
