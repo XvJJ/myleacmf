@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 14/02/2018 17:23:36
+ Date: 21/02/2018 16:53:59
 */
 
 SET NAMES utf8mb4;
@@ -64,7 +64,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, 'b9a04ec433f653464b8a5890a5afbebd', 695, 1518423820, '127.0.0.1', 1, 1);
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '2fa01e8614094cc471dafab1d1debe62', 697, 1519179271, '127.0.0.1', 1, 1);
 INSERT INTO `admin` VALUES (2, 'manage', '管理员', 'd3e3aad7256f373a52a9cfb99bb54c98', 0, '9c1f396f25668e2b2322936c7e02e603', 47, 1504764750, '1.25.227.160', 1, 1496306374);
 
 -- ----------------------------
@@ -293,16 +293,24 @@ CREATE TABLE `meeting`  (
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of meeting
 -- ----------------------------
-INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1518225060, 1, '', 1517919081, 1518177490, 0);
-INSERT INTO `meeting` VALUES (3, 1, '会议2', 2, 1518656400, 2, '', 1518177664, 1518329453, 1);
-INSERT INTO `meeting` VALUES (4, 1, '会议3', 2, 1518656400, 3, '', 1518180345, 1518339185, 1);
-INSERT INTO `meeting` VALUES (5, 1, '会议4', 2, 1518224400, 2, '', 1518180544, 1518338700, 0);
-INSERT INTO `meeting` VALUES (6, 1, '会议5', 2, 1518224400, 3, '', 1518180736, 1518180736, 0);
+INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1518225060, 1, '', 1517919081, 1518177490, 2);
+INSERT INTO `meeting` VALUES (3, 1, '会议2', 2, 1518656400, 2, '', 1518177664, 1518329453, 2);
+INSERT INTO `meeting` VALUES (4, 1, '会议3', 2, 1518656400, 3, '', 1518180345, 1518339185, 2);
+INSERT INTO `meeting` VALUES (5, 1, '会议4', 2, 1518224400, 2, '', 1518180544, 1518338700, 2);
+INSERT INTO `meeting` VALUES (6, 1, '会议5', 2, 1518224400, 3, '', 1518180736, 1518180736, 2);
+INSERT INTO `meeting` VALUES (7, 1, '会议6', 2, 1519174800, 2, '', 1519106496, 1519108179, 2);
+INSERT INTO `meeting` VALUES (8, 1, '会议7', 2, 1519171200, 2, '', 1519109089, 1519109089, 2);
+INSERT INTO `meeting` VALUES (9, 1, '会议8', 2, 1519174800, 1, '', 1519112260, 1519112260, 2);
+INSERT INTO `meeting` VALUES (10, 1, '会议9', 2, 1519174800, 3, '', 1519112541, 1519112541, 2);
+INSERT INTO `meeting` VALUES (11, 1, '会议9', 2, 1519174800, 3, '', 1519112875, 1519112875, 2);
+INSERT INTO `meeting` VALUES (12, 1, '奥丁', 2, 1519174800, 2, '', 1519112952, 1519112952, 2);
+INSERT INTO `meeting` VALUES (13, 1, '会议', 2, 1519261200, 1, '', 1519194766, 1519194843, 2);
+INSERT INTO `meeting` VALUES (14, 1, '会议2', 2, 1519261200, 2, '', 1519194895, 1519194895, 1);
 
 -- ----------------------------
 -- Table structure for msg

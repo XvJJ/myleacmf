@@ -14,6 +14,7 @@ class MeetingController extends CommonController
 
     public function index()
     {
+        //下架过期会议
         if (!self::deleteOutDateMeeting()) {
             $this->error('删除过期会议失败');
         }
@@ -46,26 +47,22 @@ class MeetingController extends CommonController
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
 
+            if (!self::isInUse($post)) {
+                $roomList = self::getRoomList();
+                $this->assign('roomList', $roomList);
+                $this->assign('info', $post);
+                echo '<script>alert("此会议室该时间段被占用")</script>';
+                // $this->success('此会议室该时间段被占用');
+                return view();
+            }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
-            }
-            if (!self::isInUse($post)) {
-                if (session('?inUsePost')) {
-                    session('inUsePost', null);
-                }
-                if (empty($post['id'])) {
-                    $newMeeting = Db::name('meeting')->order('id desc')->select();
-                    $id = $newMeeting['0']['id'];
-                    $post['id'] = $id;
-                }
-                session('inUsePost', $post);
-                $this->success('此会议室该时间段被占用', url('edit'));
             }
             $this->success('新增成功', url('index'));
         } else {
             $roomList = self::getRoomList();
             $this->assign('roomList', $roomList);
-            return view('edit');
+            return view('');
         }
     }
 
@@ -76,23 +73,15 @@ class MeetingController extends CommonController
 
     public function edit()
     {
-        if (session('?inUsePost')) {
-            $post = session('inUsePost');
-            session('inUsePost', null);
-            $roomList = self::getRoomList();
-            $this->assign('roomList', $roomList);
-            $this->assign('info', $post);
-            return view();
-        } else if ($this->request->isPost()) {
+        if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
             if (!self::isInUse($post)) {
-                if (session('?inUsePost')) {
-                    session('inUsePost', null);
-                }
-                session('inUsePost', $post);
+                $roomList = self::getRoomList();
+                $this->assign('roomList', $roomList);
+                $this->assign('info', $post);
                 $this->success('此会议室该时间段被占用', url('edit'));
             }
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
@@ -183,10 +172,10 @@ class MeetingController extends CommonController
         foreach ($list as $value) {
             $start_t = $value['start_time'];
             $end_t = $start_t + $value['use_time'] * 60 * 60;
-            if ($end_time <= $end_t && $end_time >= $start_t) {
+            if ($end_time <= $end_t && $end_time > $start_t) {
                 return false;
             }
-            if ($start_time <= $end_t && $start_time >= $start_t) {
+            if ($start_time < $end_t && $start_time >= $start_t) {
                 return false;
             }
         }
@@ -194,17 +183,17 @@ class MeetingController extends CommonController
     }
 
     /**
-     * 将过期的会议下架
+     * 删除过期会议
      * @return bool
      */
     public function deleteOutDateMeeting()
     {
         $date = time();
-        $list = Db::name('meeting')->where('status', '1')->select();
+        $list = Db::name('meeting')->where('status', 'in', '0,1')->select();
         foreach ($list as $value) {
             $id = $value['id'];
             if ($value['start_time'] <= $date) {
-                if (Db::name('meeting')->where('id', $id)->setField('status', 0) == false) {
+                if (Db::name('meeting')->where('id', $id)->setField('status', 2) == false) {
                     return false;
                 }
             }
