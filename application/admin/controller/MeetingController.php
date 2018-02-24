@@ -52,7 +52,6 @@ class MeetingController extends CommonController
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
                 echo '<script>alert("此会议室该时间段被占用")</script>';
-                // $this->success('此会议室该时间段被占用');
                 return view();
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
@@ -82,7 +81,9 @@ class MeetingController extends CommonController
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
-                $this->success('此会议室该时间段被占用', url('edit'));
+                echo '<script>alert("此会议室该时间段被占用")</script>';
+                return view();
+
             }
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());

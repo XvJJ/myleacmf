@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 21/02/2018 16:53:59
+ Date: 24/02/2018 14:49:36
 */
 
 SET NAMES utf8mb4;
@@ -488,7 +488,7 @@ CREATE TABLE `user`  (
   `occupation` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `balance` decimal(15, 2) UNSIGNED NOT NULL DEFAULT 0.00 COMMENT '余额',
   `password` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `register_time` datetime(0) NOT NULL COMMENT '注册时间',
+  `register_time` datetime NOT NULL COMMENT '注册时间',
   `update_time` int(11) DEFAULT NULL COMMENT '更新时间',
   `status` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
@@ -514,7 +514,7 @@ CREATE TABLE `user_token`  (
   `user_id` int(11) UNSIGNED NOT NULL COMMENT '用户id',
   `token` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'token',
   `ip` char(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `time` datetime(0) NOT NULL COMMENT '登陆时间',
+  `time` datetime NOT NULL COMMENT '登陆时间',
   `agent` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user_agent',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '记录用户登陆情况' ROW_FORMAT = Dynamic;
