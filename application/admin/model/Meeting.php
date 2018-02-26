@@ -13,7 +13,7 @@ class Meeting extends Model
 
     /**
      * 自动完成
-     * @array
+     * @var array
      */
     protected $insert = ['create_aid'];
 

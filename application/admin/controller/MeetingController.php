@@ -23,6 +23,7 @@ class MeetingController extends CommonController
 
     /**
      * 会议列表
+     * @return mixed
      */
     public function lists()
     {
@@ -51,17 +52,17 @@ class MeetingController extends CommonController
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
-                echo '<script>alert("此会议室该时间段被占用")</script>';
+                $this->error("此会议室该时间段被占用");
                 return view();
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
             }
-            $this->success('新增成功', url('index'));
+            $this->success('新增成功');
         } else {
             $roomList = self::getRoomList();
             $this->assign('roomList', $roomList);
-            return view('');
+            return view();
         }
     }
 
@@ -69,7 +70,6 @@ class MeetingController extends CommonController
      * 编辑页面和编辑操作
      * @return mixed
      */
-
     public function edit()
     {
         if ($this->request->isPost()) {
@@ -81,14 +81,13 @@ class MeetingController extends CommonController
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
-                echo '<script>alert("此会议室该时间段被占用")</script>';
+                $this->error("此会议室该时间段被占用");
                 return view();
-
             }
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());
             }
-            $this->success('修改成功', url('index'));
+            $this->success('新增成功', url('index'));
         } else {
             $id = $this->request->get('id', 0, 'intval');
             if (!$id) {

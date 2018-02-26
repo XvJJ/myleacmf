@@ -55,7 +55,7 @@ class ArticleController extends CommonController
             if ($Article->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Article->getError());
             }
-            $this->success('新增成功', url('index'));
+            $this->success('新增成功');
         } else {
             return view('edit', [
                 'cate' => Article::$cate,

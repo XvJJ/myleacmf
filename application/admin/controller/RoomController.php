@@ -19,16 +19,16 @@ class RoomController extends CommonController
 
     public function lists()
     {
-        $model      = Db::name('room')->where('status', 'in', [0,1]);
-        $rooms      = $model->order('id desc')->paginate(10);
-        $list       = $rooms->getCollection()->toArray();
+        $model = Db::name('room')->where('status', 'in', [0, 1]);
+        $rooms = $model->order('id desc')->paginate(10);
+        $list = $rooms->getCollection()->toArray();
         $this->assign('list', $list);
         return view();
     }
 
-    /***
-     *   添加页面和添加操作
-     *   @return mixed
+    /**
+     * 添加页面和添加操作
+     * @return mixed
      */
     public function add()
     {
@@ -70,11 +70,11 @@ class RoomController extends CommonController
 
     /**
      * 设置状态
-     * @return json
+     * @return mixed
      */
     public function setStatus()
     {
-        $id     = $this->request->get('id', 0, 'intval');
+        $id = $this->request->get('id', 0, 'intval');
         $status = $this->request->get('status', 0, 'intval');
 
         if ($id > 0 && (new Room())->where('id', $id)->update(['status' => $status]) !== false) {
@@ -85,6 +85,7 @@ class RoomController extends CommonController
 
     /**
      * 删除
+	 * @return json
      */
     public function delete()
     {
