@@ -38,20 +38,20 @@
 				</script>
 			</div>
 			<div class="layui-form-item">
-				<lable class="layui-form-label">占用时间</lable>
+				<lable class="layui-form-label">结束时间</lable>
 				<div class="layui-input-block">
-					<select name="use_time" class="form-control input-sm" lay-verify="required">
-						<option value=""></option>
-						<option value="0.5" <php>if(isset($info)&&$info['use_time']==0.5):echo 'selected="selected"';endif;</php>>0.5小时</option>
-						<option value="1" <php>if(isset($info)&&$info['use_time']==1):echo 'selected="selected"';endif;</php>>1小时</option>
-						<option value="1.5" <php>if(isset($info)&&$info['use_time']==1.5):echo 'selected="selected"';endif;</php>>1.5小时</option>
-						<option value="2" <php>if(isset($info)&&$info['use_time']==2):echo 'selected="selected"';endif;</php>>2小时</option>
-						<option value="2.5" <php>if(isset($info)&&$info['use_time']==2.5):echo 'selected="selected"';endif;</php>>2.5小时</option>
-						<option value="3" <php>if(isset($info)&&$info['use_time']==3):echo 'selected="selected"';endif;</php>>3小时</option>
-						<option value="3.5" <php>if(isset($info)&&$info['use_time']==3.5):echo 'selected="selected"';endif;</php>>3.5小时</option>
-						<option value="4" <php>if(isset($info)&&$info['use_time']==4):echo 'selected="selected"';endif;</php>>4小时</option>
-					</select>
+					<input type="text" name="end_time" id="end_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['end_time']);else:echo '';endif;</php>"
+					 class="layui-input">
 				</div>
+				<script type="text/javascript">
+					laydate.render({
+						elem: '#end_time',
+						type: 'datetime',
+						format: 'yyyy-MM-dd HH:mm',
+						min: 0,
+						max: 14
+					});
+				</script>
 			</div>
 			<div class="layui-form-item">
 				<lable class="layui-form-label">备注</lable>

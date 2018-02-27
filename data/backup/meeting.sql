@@ -5,7 +5,7 @@ CREATE TABLE `meeting` (
 	`title` varchar(100) NOT NULL DEFAULT '' COMMENT '会议名称',  
 	`room` int(11) NOT NULL DEFAULT '0' COMMENT '会议室编号',  
 	`start_time` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '开始时间',  
-	`use_time` int(10) unsigned NOT NULL DEFAULT  0 COMMENT '占用时间 以半小时为单位',  
+	`end_time` int(10) unsigned NOT NULL DEFAULT  0 COMMENT '结束时间',  
 	`remark` varchar(200) DEFAULT '' COMMENT '备注',  
 	`create_time` int(10) unsigned NOT NULL DEFAULT  0  COMMENT '创建时间',  
 	`update_time` int(10) unsigned NOT NULL DEFAULT 0  COMMENT '更新时间',  

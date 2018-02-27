@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 24/02/2018 14:49:36
+ Date: 27/02/2018 16:03:28
 */
 
 SET NAMES utf8mb4;
@@ -59,13 +59,14 @@ CREATE TABLE `admin`  (
   `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '0-禁用 1-正常',
   `create_time` int(11) NOT NULL COMMENT '注册时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台管理员表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '后台管理员表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '2fa01e8614094cc471dafab1d1debe62', 697, 1519179271, '127.0.0.1', 1, 1);
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '2297a62ea407f0574301827af0c4cd82', 700, 1519695947, '127.0.0.1', 1, 1);
 INSERT INTO `admin` VALUES (2, 'manage', '管理员', 'd3e3aad7256f373a52a9cfb99bb54c98', 0, '9c1f396f25668e2b2322936c7e02e603', 47, 1504764750, '1.25.227.160', 1, 1496306374);
+INSERT INTO `admin` VALUES (5, 'user', 'user', 'c88bb5ce02a571df2e11444b28fe316a', 0, NULL, 0, NULL, NULL, 1, 1519636428);
 
 -- ----------------------------
 -- Table structure for article
@@ -82,7 +83,7 @@ CREATE TABLE `article`  (
   `update_time` int(11) NOT NULL,
   `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '1-正常 0-下架 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 25 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of article
@@ -102,6 +103,14 @@ INSERT INTO `article` VALUES (12, 1, '系统重磅升级', 0, '<p><img src=\"/up
 INSERT INTO `article` VALUES (13, 2, '11111111111111111111', 424, '11111111', 1504711084, 1, 1504711084, 1);
 INSERT INTO `article` VALUES (14, 1, '全民美APP带你走进不一样的电商', 432, '<p><img src=\"/uploads/image/20170907/f99791079aceb6c1aa751f6dbb807939.jpg\" alt=\"undefined\"></p><p>呜啦啦呜啦啦<br></p>', 1504756154, 2, 1504756154, 1);
 INSERT INTO `article` VALUES (16, 1, 'asdf', 9, '<p>sdf</p><p><img src=\"/uploads/image/20171010/0baa9176b0a42a34b08e39f915a93e28.png\" alt=\"undefined\"><br></p>', 1507621712, 1, 1507622250, 1);
+INSERT INTO `article` VALUES (17, 2, 'aaa', NULL, 'werew', 1519626607, 1, 1519626670, 1);
+INSERT INTO `article` VALUES (18, 2, 'bbb', NULL, 'bbb', 1519626870, 1, 1519626870, 1);
+INSERT INTO `article` VALUES (19, 2, 'ccc', NULL, 'ccc', 1519626918, 1, 1519626918, 1);
+INSERT INTO `article` VALUES (20, 2, 'ddd', NULL, 'dddd', 1519627887, 1, 1519627887, 1);
+INSERT INTO `article` VALUES (21, 2, 'ddd', NULL, 'dddd', 1519628341, 1, 1519628341, 1);
+INSERT INTO `article` VALUES (22, 2, 'eee', NULL, 'eee', 1519634791, 1, 1519634791, 1);
+INSERT INTO `article` VALUES (23, 2, 'fff', NULL, 'fff', 1519696560, 1, 1519696560, 1);
+INSERT INTO `article` VALUES (24, 2, 'ggg', NULL, 'ggg', 1519698892, 1, 1519698892, 1);
 
 -- ----------------------------
 -- Table structure for auth_group
@@ -140,6 +149,9 @@ CREATE TABLE `auth_group_access`  (
 -- ----------------------------
 INSERT INTO `auth_group_access` VALUES (1, 1);
 INSERT INTO `auth_group_access` VALUES (2, 2);
+INSERT INTO `auth_group_access` VALUES (3, 2);
+INSERT INTO `auth_group_access` VALUES (4, 2);
+INSERT INTO `auth_group_access` VALUES (5, 2);
 
 -- ----------------------------
 -- Table structure for auth_rule
@@ -287,30 +299,22 @@ CREATE TABLE `meeting`  (
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议名称',
   `room` int(11) NOT NULL DEFAULT 0 COMMENT '会议室编号',
   `start_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
-  `use_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '占用时间 以半小时为单位',
+  `end_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '结束时间',
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `create_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '创建时间',
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of meeting
 -- ----------------------------
-INSERT INTO `meeting` VALUES (2, 1, '会议1', 2, 1518225060, 1, '', 1517919081, 1518177490, 2);
-INSERT INTO `meeting` VALUES (3, 1, '会议2', 2, 1518656400, 2, '', 1518177664, 1518329453, 2);
-INSERT INTO `meeting` VALUES (4, 1, '会议3', 2, 1518656400, 3, '', 1518180345, 1518339185, 2);
-INSERT INTO `meeting` VALUES (5, 1, '会议4', 2, 1518224400, 2, '', 1518180544, 1518338700, 2);
-INSERT INTO `meeting` VALUES (6, 1, '会议5', 2, 1518224400, 3, '', 1518180736, 1518180736, 2);
-INSERT INTO `meeting` VALUES (7, 1, '会议6', 2, 1519174800, 2, '', 1519106496, 1519108179, 2);
-INSERT INTO `meeting` VALUES (8, 1, '会议7', 2, 1519171200, 2, '', 1519109089, 1519109089, 2);
-INSERT INTO `meeting` VALUES (9, 1, '会议8', 2, 1519174800, 1, '', 1519112260, 1519112260, 2);
-INSERT INTO `meeting` VALUES (10, 1, '会议9', 2, 1519174800, 3, '', 1519112541, 1519112541, 2);
-INSERT INTO `meeting` VALUES (11, 1, '会议9', 2, 1519174800, 3, '', 1519112875, 1519112875, 2);
-INSERT INTO `meeting` VALUES (12, 1, '奥丁', 2, 1519174800, 2, '', 1519112952, 1519112952, 2);
-INSERT INTO `meeting` VALUES (13, 1, '会议', 2, 1519261200, 1, '', 1519194766, 1519194843, 2);
-INSERT INTO `meeting` VALUES (14, 1, '会议2', 2, 1519261200, 2, '', 1519194895, 1519194895, 1);
+INSERT INTO `meeting` VALUES (1, 1, '会议1', 2, 1519660800, 1519747200, '', 1519712587, 1519712587, 2);
+INSERT INTO `meeting` VALUES (2, 1, '会议2', 7, 1519747200, 1519833600, '', 1519712927, 1519712927, 1);
+INSERT INTO `meeting` VALUES (3, 1, 'asd', 2, 1519920000, 1520006400, '', 1519713240, 1519713240, 1);
+INSERT INTO `meeting` VALUES (4, 1, 'asdf', 2, 1519747200, 1519660800, '', 1519713675, 1519713675, 2);
+INSERT INTO `meeting` VALUES (5, 1, 'asdf', 2, 1519747200, 1519660800, '', 1519713713, 1519713713, 2);
 
 -- ----------------------------
 -- Table structure for msg
@@ -324,12 +328,13 @@ CREATE TABLE `msg`  (
   `at_time` int(11) UNSIGNED NOT NULL,
   `is_read` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT '0未读 1-已读',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of msg
 -- ----------------------------
 INSERT INTO `msg` VALUES (1, 0, 'test', '', 1507692726, 0);
+INSERT INTO `msg` VALUES (2, 0, 'haha', '', 1519626590, 0);
 
 -- ----------------------------
 -- Table structure for room
@@ -343,7 +348,7 @@ CREATE TABLE `room`  (
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态 0-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of room
@@ -351,6 +356,10 @@ CREATE TABLE `room`  (
 INSERT INTO `room` VALUES (1, 1, '123', '123', '', 2);
 INSERT INTO `room` VALUES (2, 1, '会议室1', '一楼', '有座位', 1);
 INSERT INTO `room` VALUES (3, 1, '会议室2', '二楼', '有空调', 1);
+INSERT INTO `room` VALUES (4, 1, '会议室3', '三楼', '；啊；啊；', 2);
+INSERT INTO `room` VALUES (5, 1, '会议室4', '四楼', '', 2);
+INSERT INTO `room` VALUES (6, 1, 'huiyishi3', 'sanlou', '', 1);
+INSERT INTO `room` VALUES (7, 1, '会议4', '4楼', '', 1);
 
 -- ----------------------------
 -- Table structure for setting
@@ -488,7 +497,7 @@ CREATE TABLE `user`  (
   `occupation` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `balance` decimal(15, 2) UNSIGNED NOT NULL DEFAULT 0.00 COMMENT '余额',
   `password` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `register_time` datetime NOT NULL COMMENT '注册时间',
+  `register_time` datetime(0) NOT NULL COMMENT '注册时间',
   `update_time` int(11) DEFAULT NULL COMMENT '更新时间',
   `status` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
@@ -514,7 +523,7 @@ CREATE TABLE `user_token`  (
   `user_id` int(11) UNSIGNED NOT NULL COMMENT '用户id',
   `token` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'token',
   `ip` char(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `time` datetime NOT NULL COMMENT '登陆时间',
+  `time` datetime(0) NOT NULL COMMENT '登陆时间',
   `agent` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'user_agent',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '记录用户登陆情况' ROW_FORMAT = Dynamic;

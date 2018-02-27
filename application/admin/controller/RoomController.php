@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\controller\CommonController;
 use app\admin\model\Room;
 use think\Db;
 use think\Request;
@@ -85,7 +86,7 @@ class RoomController extends CommonController
 
     /**
      * 删除
-	 * @return json
+     * @return json
      */
     public function delete()
     {

@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\controller\CommonController;
 use app\admin\model\Meeting;
 use think\Db;
 use think\Request;
@@ -27,13 +28,17 @@ class MeetingController extends CommonController
      */
     public function lists()
     {
-        $model = Db::name('meeting')->where('status', 'in', [0, 1]);
-        $meetings = $model->order('id desc')->paginate(10);
-        $list = $meetings->getCollection()->toArray();
-        $room = self::getRoomList();
-        $this->assign('room', $room);
-        $this->assign('list', $list);
-        return view();
+        if ($this->request->isAjax()) {
+            $model = Db::name('meeting')->where('status', 'in', [0, 1]);
+            $meetings = $model->order('id desc')->paginate(10);
+            $list = $meetings->getCollection()->toArray();
+            $room = self::getRoomList();
+            $this->assign('room', $room);
+            $this->assign('list', $list);
+            return view();
+        } else {
+            return view();
+        }
     }
 
     /**
@@ -46,19 +51,26 @@ class MeetingController extends CommonController
             $Meeting = new Meeting();
             $post = $this->request->post();
             $start_time = $post['start_time'];
+            $end_time = $post['end_time'];
             $post['start_time'] = strtotime($start_time);
-
+            $post['end_time'] = strtotime($end_time);
+            if ($post['start_time'] >= $post['end_time']) {
+                $this->error("结束时间应在开始时间之后");
+            }
             if (!self::isInUse($post)) {
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
                 $this->error("此会议室该时间段被占用");
-                return view();
+                // echo "<script>layer.msg(\'此会议室该时间段被占用\', {icon: 5});</script>";
+                // $this->redirect('index');
             }
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
             }
-            $this->success('新增成功');
+            $this->success('新增成功', url('index'));
+            // echo "<script>layer.msg(\'新增成功\', {icon: 6});</script>";
+            // $this->redirect('index');
         } else {
             $roomList = self::getRoomList();
             $this->assign('roomList', $roomList);
@@ -77,6 +89,8 @@ class MeetingController extends CommonController
             $post = $this->request->post();
             $start_time = $post['start_time'];
             $post['start_time'] = strtotime($start_time);
+            $post['end_time'] = strtotime($end_time);
+
             if (!self::isInUse($post)) {
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
@@ -159,7 +173,7 @@ class MeetingController extends CommonController
     public function isInUse($post)
     {
         $start_time = $post['start_time'];
-        $end_time = $start_time + $post['use_time'] * 60 * 60;
+        $end_time = $post['end_time'];
         $model = Db::name('meeting');
         if (isset($post['id']) && !empty($post['id'])) {
             $id = $post['id'];
@@ -171,7 +185,7 @@ class MeetingController extends CommonController
         }
         foreach ($list as $value) {
             $start_t = $value['start_time'];
-            $end_t = $start_t + $value['use_time'] * 60 * 60;
+            $end_t = $value['end_time'];
             if ($end_time <= $end_t && $end_time > $start_t) {
                 return false;
             }
