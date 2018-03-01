@@ -31,11 +31,35 @@
 			<input type="hidden" name="cate_id" value="{$info.create_aid|default='1'}">
 			<div class="layui-form-item">
 				<div class="layui-input-block">
-					<button class="btn btn-primary" lay-submit lay-filter="layform1" target="1">
+					<button class="btn btn-primary" lay-submit lay-filter="layform" target="1">
 						<i class="fa fa-save"></i> 保存</button>
 					<button type="reset" class="btn btn-default" style="margin-left: 20px;">重置</button>
 				</div>
 			</div>
 		</form>
 	</div>
+	<!-- <script src="__PUBLIC__/layui/layui.js"></script>
+	<script type="text/javascript">
+		layui.use(['form', 'layer'], function () {
+			var form = layui.form,
+				layer = layui.layer,
+				$ = layui.jquery;
+
+			// 表单提交监听
+			form.on('submit(layform1)', function (data) {
+				// 提交请求
+				$.post("/admin.php/room/add", data.field, function (res) {
+					// 提示信息
+					layer.msg(res.msg, {
+						time: 1500
+					}, function () {
+						if (res.code == 1) {
+							window.location.href = res.url;
+						}
+					});
+				});
+				return false;
+			});
+		});
+	</script> -->
 </block>
