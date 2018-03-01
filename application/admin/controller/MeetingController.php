@@ -192,6 +192,9 @@ class MeetingController extends CommonController
             if ($start_time < $end_t && $start_time >= $start_t) {
                 return false;
             }
+            if ($start_time <= $start_t && $end_time >= $end_t) {
+                return false;
+            }
         }
         return true;
     }
