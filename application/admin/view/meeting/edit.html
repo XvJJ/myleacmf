@@ -1,78 +1,79 @@
 <extend name="public/base" />
 <block name="body">
-    <div class="box-body">
-        <form class="layui-form" action="{:url()}" method="post" id="goods-form">
-            <div class="layui-form-item">
-                <label class="layui-form-label">会议标题</label>
-                <div class="layui-input-block">
-                    <input type="text" name="title" placeholder="" lay-verify="required" value="{$info.title|default=''}" class="layui-input">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">会议室</label>
-                <div class="layui-input-inline">
-                    <select name="room" class="form-control input-sm" lay-verify="required">
-                        <option value=""></option>
-                        <notempty name="roomList">
-                            <volist name="roomList" id="vo">
-                                <option value="{$vo.id}" <php>if(isset($info)&&$info['room']==$vo['id']):echo 'selected="selected"';endif;</php>>{$vo.name}</option>
-                            </volist>
-                        </notempty>
-                    </select>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <lable class="layui-form-label">开始时间</lable>
-                <div class="layui-input-block">
-                    <input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>" class="layui-input">
-                </div>
-                <script type="text/javascript">
-                laydate.render({
-                    elem: '#start_time',
-                    type: 'datetime',
-                    format: 'yyyy-MM-dd HH:mm',
-                    min: 0,
-                    max: 14
-                });
-                </script>
-            </div>
-            <div class="layui-form-item">
-                <lable class="layui-form-label">占用时间</lable>
-                <div class="layui-input-block">
-                    <select name="use_time" class="form-control input-sm" lay-verify="required">
-                        <option value=""></option>
-                        <option value="0.5" <php>if(isset($info)&&$info['use_time']==0.5):echo 'selected="selected"';endif;</php>>0.5小时</option>
-                        <option value="1" <php>if(isset($info)&&$info['use_time']==1):echo 'selected="selected"';endif;</php>>1小时</option>
-                        <option value="1.5" <php>if(isset($info)&&$info['use_time']==1.5):echo 'selected="selected"';endif;</php>>1.5小时</option>
-                        <option value="2" <php>if(isset($info)&&$info['use_time']==2):echo 'selected="selected"';endif;</php>>2小时</option>
-                        <option value="2.5" <php>if(isset($info)&&$info['use_time']==2.5):echo 'selected="selected"';endif;</php>>2.5小时</option>
-                        <option value="3" <php>if(isset($info)&&$info['use_time']==3):echo 'selected="selected"';endif;</php>>3小时</option>
-                        <option value="3.5" <php>if(isset($info)&&$info['use_time']==3.5):echo 'selected="selected"';endif;</php>>3.5小时</option>
-                        <option value="4" <php>if(isset($info)&&$info['use_time']==4):echo 'selected="selected"';endif;</php>>4小时</option>
-                    </select>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <lable class="layui-form-label">备注</lable>
-                <div class="layui-input-block">
-                    <textarea name="remark" id="remark" cols="30" rows="5" placeholder="" lay-verify="" class="layui-textarea">{$info.remark|default=''}</textarea>
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">状态</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="status" value="1" title="上架" <php>if(!isset($info)||$info['status']==1):echo 'checked';endif</php>>
-                    <input type="radio" name="status" value="0" title="下架" <php>if(isset($info)&&$info['status']==0):echo 'checked';endif</php>>
-                </div>
-            </div>
-            <input type="hidden" name="id" value="{$info.id|default=''}">
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <button class="btn btn-primary" lay-submit lay-filter="layform" target="1">
-                        <i class="fa fa-save"></i> 保存</button>
-                    <button type="reset" class="btn btn-default" style="margin-left: 20px;">重置</button>
-                </div>
-            </div>
-        </form>
-    </div>
+	<div class="box-body">
+		<form class="layui-form" action="{:url()}" method="post" id="goods-form">
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议标题</label>
+				<div class="layui-input-block">
+					<input type="text" name="title" placeholder="" lay-verify="required" value="{$info.title|default=''}" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">会议室</label>
+				<div class="layui-input-inline">
+					<select name="room" class="form-control input-sm" lay-verify="required">
+						<option value=""></option>
+						<notempty name="roomList">
+							<volist name="roomList" id="vo">
+								<option value="{$vo.id}" <php>if(isset($info)&&$info['room']==$vo['id']):echo 'selected="selected"';endif;</php>>{$vo.name}</option>
+							</volist>
+						</notempty>
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<lable class="layui-form-label">开始时间</lable>
+				<div class="layui-input-block">
+					<input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>"
+					    class="layui-input">
+				</div>
+				<script type="text/javascript">
+					laydate.render({
+						elem: '#start_time',
+						type: 'datetime',
+						format: 'yyyy-MM-dd HH:mm',
+						min: 0,
+						max: 14
+					});
+				</script>
+			</div>
+			<div class="layui-form-item">
+				<lable class="layui-form-label">结束时间</lable>
+				<div class="layui-input-block">
+					<input type="text" name="end_time" id="end_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['end_time']);else:echo '';endif;</php>"
+					    class="layui-input">
+				</div>
+				<script type="text/javascript">
+					laydate.render({
+						elem: '#end_time',
+						type: 'datetime',
+						format: 'yyyy-MM-dd HH:mm',
+						min: 0,
+						max: 14
+					});
+				</script>
+			</div>
+			<div class="layui-form-item">
+				<lable class="layui-form-label">备注</lable>
+				<div class="layui-input-block">
+					<textarea name="remark" id="remark" cols="30" rows="5" placeholder="" lay-verify="" class="layui-textarea">{$info.remark|default=''}</textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">状态</label>
+				<div class="layui-input-block">
+					<input type="radio" name="status" value="1" title="上架" <php>if(!isset($info)||$info['status']==1):echo 'checked';endif</php>>
+					<input type="radio" name="status" value="0" title="下架" <php>if(isset($info)&&$info['status']==0):echo 'checked';endif</php>>
+				</div>
+			</div>
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="btn btn-primary" lay-submit lay-filter="layform" target="1">
+						<i class="fa fa-save"></i> 保存</button>
+					<button type="reset" class="btn btn-default" style="margin-left: 20px;">重置</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </block>

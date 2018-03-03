@@ -22,6 +22,22 @@
 				</div>
 			</div>
 			<div class="layui-form-item">
+				<label class="layui-form-labe">选择日期</label>
+				<div class="layui-input-block">
+					<input type="text" name="date" id="date" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d',$info['date']);else:echo '';endif;</php>"
+					 class="layui-input">
+				</div>
+				<script type="text/javascript">
+					laydate.render({
+						elem: '#date',
+						type: 'date',
+						format: 'yyyy-MM-dd HH:mm',
+						min: 0,
+						max: 14
+					});
+				</script>
+			</div>
+			<div class="layui-form-item">
 				<lable class="layui-form-label">开始时间</lable>
 				<div class="layui-input-block">
 					<input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>"
