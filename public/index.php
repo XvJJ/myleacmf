@@ -9,10 +9,21 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+// // [ 应用入口文件 ]
+// mb_internal_encoding("UTF-8");
+// //文件服务器
+// define('FILE_HOST', '');
+// // 定义应用目录
+// define('APP_PATH', __DIR__ . '/../application/');
+// // 加载框架引导文件
+// require __DIR__ . '/../thinkphp/start.php';
+
+
+// 绑定admin模块
+define('BIND_MODULE', 'admin');
+define('APP_DEV', false);
 // [ 应用入口文件 ]
 mb_internal_encoding("UTF-8");
-//文件服务器
-define('FILE_HOST', '');
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件

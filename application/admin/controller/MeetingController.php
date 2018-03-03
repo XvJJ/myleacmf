@@ -162,7 +162,7 @@ class MeetingController extends CommonController
      */
     public function getRoomNameList()
     {
-        $list = Db::name('room')->column('id', 'name');
+        $list = Db::name('room')->where('status',1)->column('id', 'name');
         return $list;
     }
 
@@ -206,7 +206,7 @@ class MeetingController extends CommonController
     public function deleteOutDateMeeting()
     {
         $date = time();
-        $list = Db::name('meeting')->where('status', 'in', '0,1')->select();
+        $list = Db::name('meeting')->where('status', 'in', [0,1])->select();
         foreach ($list as $value) {
             $id = $value['id'];
             if ($value['start_time'] <= $date) {
