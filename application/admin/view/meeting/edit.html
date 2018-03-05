@@ -22,34 +22,46 @@
 				</div>
 			</div>
 			<div class="layui-form-item">
-				<lable class="layui-form-label">开始时间</lable>
+				<label class="layui-form-label">选择日期</label>
 				<div class="layui-input-block">
-					<input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['start_time']);else:echo '';endif;</php>"
-					    class="layui-input">
+					<input type="text" name="date" id="date" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo $info['date'];else:echo '';endif;</php>"
+					 class="layui-input">
 				</div>
 				<script type="text/javascript">
 					laydate.render({
-						elem: '#start_time',
-						type: 'datetime',
-						format: 'yyyy-MM-dd HH:mm',
+						elem: '#date',
+						type: 'date',
+						format: 'yyyy-MM-dd',
 						min: 0,
 						max: 14
 					});
 				</script>
 			</div>
 			<div class="layui-form-item">
+				<lable class="layui-form-label">开始时间</lable>
+				<div class="layui-input-block">
+					<input type="text" name="start_time" id="start_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('H:i',$info['start_time']);else:echo '';endif;</php>"
+					 class="layui-input">
+				</div>
+				<script type="text/javascript">
+					laydate.render({
+						elem: '#start_time',
+						type: 'time',
+						format: 'HH:mm',
+					});
+				</script>
+			</div>
+			<div class="layui-form-item">
 				<lable class="layui-form-label">结束时间</lable>
 				<div class="layui-input-block">
-					<input type="text" name="end_time" id="end_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('Y-m-d H:i',$info['end_time']);else:echo '';endif;</php>"
-					    class="layui-input">
+					<input type="text" name="end_time" id="end_time" placeholder="" lay-verify="required" value="<php> if(isset($info)):echo date('H:i',$info['end_time']);else:echo '';endif;</php>"
+					 class="layui-input">
 				</div>
 				<script type="text/javascript">
 					laydate.render({
 						elem: '#end_time',
-						type: 'datetime',
-						format: 'yyyy-MM-dd HH:mm',
-						min: 0,
-						max: 14
+						type: 'time',
+						format: 'HH:mm',
 					});
 				</script>
 			</div>
@@ -76,4 +88,25 @@
 			</div>
 		</form>
 	</div>
+	<script type="text/javascript">
+		layui.use(['form', 'layer'], function () {
+			var form = layui.form,
+				layer = layui.layer,
+				$ = layui.jquery;
+
+			// 表单提交监听
+			form.on('submit(add)', function (data) {
+				// 提交请求
+				$.post("{:url('')}", data.field, function (res) {
+					// 提示信息
+					layer.msg(res.msg, { time: 1500 }, function () {
+						if (res.code == 1) {
+							window.location.href = res.url;
+						}
+					});
+				});
+				return false;
+			});
+		});
+	</script>
 </block>

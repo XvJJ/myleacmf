@@ -11,7 +11,7 @@
  Target Server Version : 50714
  File Encoding         : 65001
 
- Date: 27/02/2018 16:03:28
+ Date: 05/03/2018 14:40:00
 */
 
 SET NAMES utf8mb4;
@@ -64,7 +64,7 @@ CREATE TABLE `admin`  (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '2297a62ea407f0574301827af0c4cd82', 700, 1519695947, '127.0.0.1', 1, 1);
+INSERT INTO `admin` VALUES (1, 'admin', 'admin', 'd3e3aad7256f373a52a9cfb99bb54c98', 6, '909af09fe41bedf720e2bf06fd25d780', 704, 1520213701, '127.0.0.1', 1, 1);
 INSERT INTO `admin` VALUES (2, 'manage', '管理员', 'd3e3aad7256f373a52a9cfb99bb54c98', 0, '9c1f396f25668e2b2322936c7e02e603', 47, 1504764750, '1.25.227.160', 1, 1496306374);
 INSERT INTO `admin` VALUES (5, 'user', 'user', 'c88bb5ce02a571df2e11444b28fe316a', 0, NULL, 0, NULL, NULL, 1, 1519636428);
 
@@ -298,6 +298,7 @@ CREATE TABLE `meeting`  (
   `create_aid` int(11) UNSIGNED DEFAULT 0 COMMENT '创建人',
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议名称',
   `room` int(11) NOT NULL DEFAULT 0 COMMENT '会议室编号',
+  `date` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '会议日期',
   `start_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '开始时间',
   `end_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '结束时间',
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
@@ -305,16 +306,12 @@ CREATE TABLE `meeting`  (
   `update_time` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '更新时间',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态 0-已过期-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of meeting
 -- ----------------------------
-INSERT INTO `meeting` VALUES (1, 1, '会议1', 2, 1519660800, 1519747200, '', 1519712587, 1519712587, 2);
-INSERT INTO `meeting` VALUES (2, 1, '会议2', 7, 1519747200, 1519833600, '', 1519712927, 1519712927, 1);
-INSERT INTO `meeting` VALUES (3, 1, 'asd', 2, 1519920000, 1520006400, '', 1519713240, 1519713240, 1);
-INSERT INTO `meeting` VALUES (4, 1, 'asdf', 2, 1519747200, 1519660800, '', 1519713675, 1519713675, 2);
-INSERT INTO `meeting` VALUES (5, 1, 'asdf', 2, 1519747200, 1519660800, '', 1519713713, 1519713713, 2);
+INSERT INTO `meeting` VALUES (1, 1, '会议2', 2, '2018-03-07', 1520380800, 1520384400, '', 1520219758, 1520228961, 1);
 
 -- ----------------------------
 -- Table structure for msg
@@ -348,7 +345,7 @@ CREATE TABLE `room`  (
   `remark` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '' COMMENT '备注',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态 0-禁用 1-启用 2-删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '会议室表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of room
@@ -358,8 +355,11 @@ INSERT INTO `room` VALUES (2, 1, '会议室1', '一楼', '有座位', 1);
 INSERT INTO `room` VALUES (3, 1, '会议室2', '二楼', '有空调', 1);
 INSERT INTO `room` VALUES (4, 1, '会议室3', '三楼', '；啊；啊；', 2);
 INSERT INTO `room` VALUES (5, 1, '会议室4', '四楼', '', 2);
-INSERT INTO `room` VALUES (6, 1, 'huiyishi3', 'sanlou', '', 1);
+INSERT INTO `room` VALUES (6, 1, 'huiyishi3', 'sanlou', '', 2);
 INSERT INTO `room` VALUES (7, 1, '会议4', '4楼', '', 1);
+INSERT INTO `room` VALUES (8, 1, 'huiyishi44', 'asdf', '', 2);
+INSERT INTO `room` VALUES (9, 1, 'huiyishi5', 'da', '', 2);
+INSERT INTO `room` VALUES (10, 1, '会议室5', 'wert', '', 1);
 
 -- ----------------------------
 -- Table structure for setting

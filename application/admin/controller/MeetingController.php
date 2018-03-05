@@ -50,27 +50,31 @@ class MeetingController extends CommonController
         if ($this->request->isPost()) {
             $Meeting = new Meeting();
             $post = $this->request->post();
-            $start_time = $post['start_time'];
-            $end_time = $post['end_time'];
-            $post['start_time'] = strtotime($start_time);
-            $post['end_time'] = strtotime($end_time);
-            if ($post['start_time'] >= $post['end_time']) {
+
+            $start_str = $post['date'] . ' ' . $post['start_time'];
+            $end_str = $post['date'] . ' ' . $post['end_time'];
+            $start_time = strtotime($start_str);
+            $end_time = strtotime($end_str);
+
+            if ($start_time >= $end_time) {
                 $this->error("结束时间应在开始时间之后");
             }
+
+            $post['start_time'] = $start_time;
+            $post['end_time'] = $end_time;
+
             if (!self::isInUse($post)) {
                 $roomList = self::getRoomList();
                 $this->assign('roomList', $roomList);
                 $this->assign('info', $post);
                 $this->error("此会议室该时间段被占用");
-                // echo "<script>layer.msg(\'此会议室该时间段被占用\', {icon: 5});</script>";
-                // $this->redirect('index');
             }
+
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
             }
             $this->success('新增成功', url('index'));
-            // echo "<script>layer.msg(\'新增成功\', {icon: 6});</script>";
-            // $this->redirect('index');
+
         } else {
             $roomList = self::getRoomList();
             $this->assign('roomList', $roomList);
@@ -87,9 +91,18 @@ class MeetingController extends CommonController
         if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
-            $start_time = $post['start_time'];
-            $post['start_time'] = strtotime($start_time);
-            $post['end_time'] = strtotime($end_time);
+
+            $start_str = $post['date'] . ' ' . $post['start_time'];
+            $end_str = $post['date'] . ' ' . $post['end_time'];
+            $start_time = strtotime($start_str);
+            $end_time = strtotime($end_str);
+
+            if ($start_time >= $end_time) {
+                $this->error("结束时间应在开始时间之后");
+            }
+
+            $post['start_time'] = $start_time;
+            $post['end_time'] = $end_time;
 
             if (!self::isInUse($post)) {
                 $roomList = self::getRoomList();
@@ -162,7 +175,7 @@ class MeetingController extends CommonController
      */
     public function getRoomNameList()
     {
-        $list = Db::name('room')->where('status',1)->column('id', 'name');
+        $list = Db::name('room')->where('status', 1)->column('id', 'name');
         return $list;
     }
 
@@ -206,7 +219,7 @@ class MeetingController extends CommonController
     public function deleteOutDateMeeting()
     {
         $date = time();
-        $list = Db::name('meeting')->where('status', 'in', [0,1])->select();
+        $list = Db::name('meeting')->where('status', 'in', [0, 1])->select();
         foreach ($list as $value) {
             $id = $value['id'];
             if ($value['start_time'] <= $date) {
