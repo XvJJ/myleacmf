@@ -50,26 +50,7 @@ class MeetingController extends CommonController
         if ($this->request->isPost()) {
             $Meeting = new Meeting();
             $post = $this->request->post();
-
-            $start_str = $post['date'] . ' ' . $post['start_time'];
-            $end_str = $post['date'] . ' ' . $post['end_time'];
-            $start_time = strtotime($start_str);
-            $end_time = strtotime($end_str);
-
-            if ($start_time >= $end_time) {
-                $this->error("结束时间应在开始时间之后");
-            }
-
-            $post['start_time'] = $start_time;
-            $post['end_time'] = $end_time;
-
-            if (!self::isInUse($post)) {
-                $roomList = self::getRoomList();
-                $this->assign('roomList', $roomList);
-                $this->assign('info', $post);
-                $this->error("此会议室该时间段被占用");
-            }
-
+            $post = self::processPost($post);
             if ($Meeting->validate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meeting->getError());
             }
@@ -91,30 +72,11 @@ class MeetingController extends CommonController
         if ($this->request->isPost()) {
             $Meet = new Meeting();
             $post = $this->request->post();
-
-            $start_str = $post['date'] . ' ' . $post['start_time'];
-            $end_str = $post['date'] . ' ' . $post['end_time'];
-            $start_time = strtotime($start_str);
-            $end_time = strtotime($end_str);
-
-            if ($start_time >= $end_time) {
-                $this->error("结束时间应在开始时间之后");
-            }
-
-            $post['start_time'] = $start_time;
-            $post['end_time'] = $end_time;
-
-            if (!self::isInUse($post)) {
-                $roomList = self::getRoomList();
-                $this->assign('roomList', $roomList);
-                $this->assign('info', $post);
-                $this->error("此会议室该时间段被占用");
-                return view();
-            }
+            $post = self::processPost($post);
             if ($Meet->validate(true)->isUpdate(true)->allowField(true)->save($post) === false) {
                 $this->error($Meet->getError());
             }
-            $this->success('新增成功', url('index'));
+            $this->success('修改成功', url('index'));
         } else {
             $id = $this->request->get('id', 0, 'intval');
             if (!$id) {
@@ -179,7 +141,40 @@ class MeetingController extends CommonController
         return $list;
     }
 
-    /**
+	/**
+	 * 处理数据
+	 * @return mixed
+	 */
+    public function processPost($post)
+    {
+        $start_str = $post['date'] . ' ' . $post['start_time'];
+        $end_str = $post['date'] . ' ' . $post['end_time'];
+        $start_time = strtotime($start_str);
+        $end_time = strtotime($end_str);
+
+        if ($start_time >= $end_time) {
+            $this->error("结束时间应在开始时间之后");
+        }
+        $curtime = time();
+        if($start_time <= $curtime){
+            $this->error("开始时间不能设置在当前时间之前");
+        }
+
+        $post['start_time'] = $start_time;
+        $post['end_time'] = $end_time;
+
+        if (!self::isInUse($post)) {
+            $roomList = self::getRoomList();
+            $this->assign('roomList', $roomList);
+            $this->assign('info', $post);
+            $this->error("此会议室该时间段被占用");
+            return view();
+        }
+
+        return $post;
+	}
+	
+	/**
      * 判断该会议室在该时间段是否被占用
      * @return bool
      */
@@ -210,8 +205,8 @@ class MeetingController extends CommonController
             }
         }
         return true;
-    }
-
+	}
+	
     /**
      * 删除过期会议
      * @return bool

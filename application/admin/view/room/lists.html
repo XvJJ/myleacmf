@@ -29,7 +29,7 @@
                         <a href="{:url('setStatus',['id'=>$vo['id'],'status'=>abs(1-$vo['status'])])}" class="ajax-get" msg="0"><span class="{$vo.status?'text-yellow':'text-muted'}"><i class="fa fa-circle"></i> {$vo.status?'启用':'停用'}</span></a>
                     </td>
                     <td>
-                        <div class="text-left">
+                        <div class="text-center">
                             <a href="{:url('edit',['id'=>$vo['id']])}" class="btn btn-xs btn-info" title="修改"><i class="fa fa-edit"></i> 修改</a>
                             <a href="{:url('delete',['id'=>$vo['id']])}" title="删除" confirm="1" class="btn btn-xs btn-danger ajax-get"><i class="fa fa-trash"></i> 删除</a>
                         </div>
